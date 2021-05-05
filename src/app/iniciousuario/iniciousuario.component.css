@@ -1,0 +1,147 @@
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border: 20px solid #ff000000;
+    margin-top: 50px;
+    height: 543px;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    #container{
+        display: flex;
+        margin-top: auto;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: auto;
+        width: 100vw;
+        margin-top: -50px;
+        margin-left: auto;
+        margin-right: auto;
+    
+        /* margin: 0px 0px 49px 0px; */
+        margin-block-end: 50px;
+    }
+}
+
+#information{
+    border: 20px solid #9dff0000;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    #information{
+        width: 95%;
+    }
+}
+
+.img-thumbnail {
+    padding: .25rem;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: .25rem;
+    max-width: 100%;
+    height: auto;
+    margin: 16px 0 16px;
+}
+
+
+.button_sign>.btn-primary{
+    margin: 15px 0;
+    text-align: center;
+    border-radius: 15px;
+}
+
+@media only screen and (min-width:250px) and (max-width:768px), screen and (orientation: portrait){
+    .button_sign>.btn-primary{
+        padding: 5px 10px;
+    }
+}
+
+.btn-google{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.google{
+    padding-left: 8px;
+}
+
+.title_span{
+    font-size: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    margin: 6px 0 9px;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .title_span{
+        font-size: 15px;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 500;
+        display: contents;
+    }
+}
+
+.link-to{
+    text-decoration: none;
+}
+
+#form{
+    border: 20px solid #5eff0000;
+    margin: 0px 10px;
+    width: 120%;
+    height: 75%;
+    padding: 62px 70px;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    #form{
+        width: 115%;
+        height: 58%;
+        padding: 0;
+        margin: -30px;
+    }
+}
+
+.record_title>h2{
+    font-size: 22px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    line-height: 33px;
+    margin: 10px 0 25px;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .record_title>h2{
+        margin: 10px  25px;   
+        padding: 4px;
+    }
+}
+
+.form-control{
+    border-radius: 15px;
+    border: 1px solid deepskyblue;
+}
+
+#butt>.btn-primary {
+    color: #fff;
+    background-color: #FF441F;
+    border-color:#FF441F;
+    border-radius: 15px;
+}
+
+#butt>.btn-primary:hover{
+    color: #fff;
+    background-color: deepskyblue;
+    border-color:deepskyblue;
+    border-radius: 15px;
+}

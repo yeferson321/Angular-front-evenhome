@@ -1,0 +1,83 @@
+<app-nav3></app-nav3>
+
+
+
+<div class="contenedor">
+
+    <div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" fill="currentColor" class="bi bi-person-circle"
+            viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            <path fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+        </svg>
+
+        <h4>{{auth.getCourrentUser()}}</h4>
+
+    </div>
+
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Busca tu empleo" aria-label="Recipient's username"
+            aria-describedby="button-addon2">
+        <button class="btn btn-outline-primary" type="button" id="button-addon2">Buscar</button>
+    </div>
+
+    <div>
+        <button type="button" class="btn btn-primary" (click)="modal = !modal">Actualizar tu perfil</button>
+    </div>
+
+</div>
+
+<div class="perfil" *ngIf="modal">
+
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+
+        <div class="row">
+            <div class="col mb-3">
+                <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre"
+                    aria-label="Nombre">
+            </div>
+            <div class="col mb-3">
+                <input formControlName="apellido" type="text" class="form-control" placeholder="Apellido"
+                    aria-label="Apellido">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <input formControlName="documento" type="text" class="form-control" placeholder="Documento"
+                aria-label="Documento">
+        </div>
+
+        <div class="row">
+            <div class="col mb-3">
+                <input formControlName="fechanaci" type="date" class="form-control" placeholder="fechanaci"
+                    aria-label="fechanaci">
+            </div>
+            <div class="col mb-3">
+                <input formControlName="telefono" type="text" class="form-control" placeholder="Telefono"
+                    aria-label="Telefono">
+            </div>
+
+            <div class="col mb-3">
+                <input formControlName="sexo" type="text" class="form-control" placeholder="Sexo" aria-label="Sexo">
+            </div>
+        </div>
+
+        <div class="d-grid gap-2" id="butt" *ngIf="load">
+            <button type="submit" class="btn btn-primary">Registrarte</button>
+        </div>
+
+        <div class="d-grid gap-2" id="butt" *ngIf="!load">
+            <button class="btn btn-primary" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+            </button>
+        </div>
+
+    </form>
+
+
+
+</div>

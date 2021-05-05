@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">EVENHOME</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link" >Empresas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="" [routerLink]="['/educacion']">Formacion</a>
+                </li>
+                <li *ngIf="!(auth.isLoggedIn() | async)" class="nav-item">
+                    <a class="nav-link" href="" [routerLink]="['/']">Empleo</a>
+                </li>
+
+                <div *ngIf="!(auth.isLoggedIn() | async)" class="right" >
+                    <button type="button" href="" [routerLink]="['/inicio_usuario']"
+                        class="btn btn-primary btn-sm">Ingresar</button>
+                    <button type="button" href="" [routerLink]="['/registro_usuario']"
+                        class="btn btn-primary btn-sm">Registrarme</button>
+                </div>
+
+                <li *ngIf="auth.isLoggedIn() | async" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" *ngIf="auth.isLoggedIn() | async">{{auth.getCourrentUser()}}</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item" type="button" [routerLink]="['/perfil_usuario']">Mi perfil</button>
+                        <button class="dropdown-item" type="button" [routerLink]="['/']"(click)="auth.logout()">Salir</button>
+                    </ul>
+                </li>
+            </div>
+        </div>
+    </div>
+</nav>

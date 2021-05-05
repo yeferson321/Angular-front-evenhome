@@ -1,0 +1,232 @@
+.containe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    border: 20px solid #ff2a2a34;
+    min-width: -webkit-fill-available;
+    height: auto;
+    margin-top: 50px;
+    padding: 0px 0px 0px 0px;
+    border-width: 0px 0px 0px 0px;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .containe{
+        display: flex;
+        margin-top: auto;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: auto;
+        width: 100vw;
+        margin-top: 40px;
+        padding: 20px 0px 20px 0px;
+        border-width: 0px 0px 0px 0px;
+    }
+}
+
+.container_h2{
+    border: 20px solid #9dff0000;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 0px 0px 130px;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .container_h2{
+        width: 95%;
+        margin: 0px 0px 0px 0px;
+        text-align: center;
+    }
+}
+
+.container_h2>h2{
+    color: rgb(255, 255, 255);
+    font-size: 23px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .container_h2>h2{
+        font-size: 17px;
+    }
+}
+
+.container_img{
+    border: 20px solid #5eff0000;
+    width: 100%;
+    height: 100%;
+    padding: 7px 29px;
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .container_img{
+        width: 100%;
+        height: 58%;
+        padding: 0;
+        margin: -30px;
+    }
+}
+
+.container_img>svg{
+    width: 65%;
+}
+
+.text-center{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin: 4% 25% 0% 25%;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .text-center{
+        margin-top: 100px;
+        margin: revert;
+        margin-top: 10%;
+    }
+}
+
+.text-center>blockquote{
+    font-size:large
+}
+
+.ico{
+    margin-bottom: 15px;
+}
+
+.blockquote-footer{
+    margin: 0 auto;
+    width: 100%;
+}
+
+#caja {
+    background: #eee6e60c;
+    height: auto;
+    width: auto;
+    padding: 30px;
+    margin: 80px;
+    margin-top: 4%;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    #caja {
+        background: #eee6e60c;
+        height: auto;
+        width: auto;
+        padding: 0px;
+        margin: 40px;
+        margin-top: 4%;
+    }
+    
+}
+
+#text-center>.blockquote>:last-child {
+    margin-bottom: 0;
+    font-size: smaller;
+    color: rgba(0, 0, 0, 0.384);
+    margin: 0% 0% 0% 0%;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    
+    #text-center>.blockquote>:last-child {
+        margin-bottom: 0;
+        font-size: smaller;
+        color: rgba(0, 0, 0, 0.384);
+        margin: 0% 0% 15% 0%;
+    }
+
+}
+
+.row {
+    margin: 4%;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .row {
+        justify-content: center;
+    }
+
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .row-cols-1>* {
+        flex: 0 0 auto;
+        width: 88%;
+        margin-block-end: 37px;
+    }
+    
+}
+
+.card-img, .card-img-bottom, .card-img-top {
+    width: 100%;
+    padding: 10%;
+}
+
+.card-body{
+   
+}
+
+.border-light {
+    border-color: #f8f9fa!important;
+    border-radius: 12px;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+svg#freepik_stories-learning:not(.animated) .animable {
+    opacity: 0;
+}
+
+svg#freepik_stories-learning.animated #freepik--background-complete--inject-5 {
+    animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideLeft;
+    animation-delay: 0s;
+}
+
+svg#freepik_stories-learning.animated #freepik--Elements--inject-5 {
+    animation: 3s Infinite linear floating;
+    animation-delay: 0s;
+}
+
+svg#freepik_stories-learning.animated #freepik--Device--inject-5 {
+    animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideLeft, 3s Infinite linear floating;
+    animation-delay: 0s, 1s;
+}
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes floating {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

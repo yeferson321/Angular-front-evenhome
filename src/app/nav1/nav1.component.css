@@ -1,0 +1,48 @@
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 2%;
+}
+
+.bg-light {
+    background-color: #ffffff!important;
+}
+
+.navbar {
+    position: fixed;
+    border-bottom: 1px solid #e5edef;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+@media only screen and (max-width: 808px), screen and (orientation: portrait){
+    .navbar{
+        position: sticky;
+        padding: 6px 0;
+        width: 100%;
+    }
+}
+
+img, svg {
+    vertical-align: middle;
+    color: deepskyblue;
+    margin-top: -3px;
+}
+
+.navbar-light .navbar-brand {
+    color: deepskyblue;
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    margin-left: 12px;
+}
+
