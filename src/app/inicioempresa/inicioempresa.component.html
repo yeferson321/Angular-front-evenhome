@@ -1,0 +1,49 @@
+<app-nav1></app-nav1>
+
+<div id="container" class="container">
+
+    <div id="information">
+
+        <img src="https://i.pinimg.com/originals/59/e4/8c/59e48cb1d07bf70c41280a3a3f45d404.gif" style="height: 150px;"
+            class="img-thumbnail" alt="...">
+
+        <span class="title_span">
+            ¿Aún no te has registrado?
+            <a class="link-to"  href="" [routerLink]="['/registro_usuario']">Registrate aquí</a>
+        </span>
+
+    </div>
+
+    <div id="form">
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+            <div class="record_title">
+                <h2>Iniciar sesión empresa! ingresa tus datos</h2>
+            </div>
+
+            <div class="mb-3">
+                <input formControlName="correo" type="email" class="form-control" placeholder="Correo"
+                    aria-label="Correo">
+            </div>
+            <div class="col mb-3">
+                <input formControlName="contraseña" type="password" class="form-control" placeholder="Contraseña"
+                    aria-label="Contraseña">
+            </div>
+
+            <div class="d-grid gap-2" id="butt" *ngIf="load">
+                <button type="submit" class="btn btn-primary">Iniciar</button>
+            </div>
+
+            <div class="d-grid gap-2" id="butt" *ngIf="!load" >
+                <button class="btn btn-primary" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Loading...
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

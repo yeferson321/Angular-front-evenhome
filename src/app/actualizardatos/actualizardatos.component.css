@@ -1,0 +1,55 @@
+.contenedor{
+    margin: 0px 50px 0px 50px;
+    padding: 12px;
+    padding: 40px 180px;
+}
+
+.container_h2>h2{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.container_h2{
+    margin-left: 2%;
+}
+
+.col {
+    flex: 1 0 0%;
+    margin: 10px;
+}
+
+.form-control {
+    border-radius: 15px;
+}
+
+.form-select {
+    border-radius: 15px;
+    color: #212529a1;
+}
+
+.form-control {
+    color: #2125299e;
+}
+
+.btn{
+    border-radius: 15px;
+    margin: 16px;
+}
+
+.form-control.is-valid, .was-validated .form-control:valid {
+    border-color: deepskyblue;
+    padding-right: calc(1.5em + .75rem);
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+
+.form-select.is-valid, .was-validated .form-select:valid {
+    border-color: deepskyblue;
+    padding-right: 4.125rem;
+    background-position: right .75rem center,center right 2.25rem;
+    background-size: 16px 12px,calc(.75em + .375rem) calc(.75em + .375rem);
+}
+

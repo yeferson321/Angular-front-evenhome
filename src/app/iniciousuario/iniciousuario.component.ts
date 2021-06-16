@@ -16,20 +16,43 @@ export class IniciousuarioComponent implements OnInit {
   form: any = FormGroup;
   load: boolean = true;
 
-  constructor( 
-    private fb: FormBuilder, 
+  constructor(
+    private fb: FormBuilder,
     private client: ClientService,
     private route: Router,
-    public auth: AuthService, ) { }
+    public auth: AuthService,) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
       correo: ['', Validators.email],
       contraseña: ['', Validators.required],
     });
+
+    
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+      
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
   }
 
-  
+
   async onSubmit() {
 
     if (this.form.valid) {
@@ -44,7 +67,7 @@ export class IniciousuarioComponent implements OnInit {
 
         (response: any) => {
 
-          //this.route.navigate( ['/educacion'])
+          this.route.navigate(['/perfil_usuario'])
 
           this.load = true;
 
@@ -59,29 +82,50 @@ export class IniciousuarioComponent implements OnInit {
               toast.addEventListener('mouseleave', Swal.resumeTimer)
             }
           })
-          
+
           Toast.fire({
             icon: 'success',
             title: 'Inicio exitoso'
-          }).then(() => {
-            this.route.navigate( ['/perfil_usuario'])
-          }) 
+          })//.then(() => {
+          //  this.route.navigate( ['/perfil_usuario'])
+          //}) 
 
           console.log(response);
 
           this.auth.login(response.token)
- 
+
           this.auth.setCourrentUser(response.nombre)
+
+          this.auth.setCourrentApellidos(response.apellidos)
+
+          this.auth.setCourrentCorreo(response.correo)
 
           localStorage.setItem('token', response.token)
           console.log(localStorage.getItem('token'));
-          
-      },
-      (error) => {
 
-        console.log(error.status);
+        },
+        (error) => {
 
-      })
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'center',
+            showConfirmButton: false,
+            timer: 2500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'warning',
+            title: 'Puede que su correo o contraseña sean incorrectos'
+          })
+
+          console.log(error.status);
+
+        })
 
 
     } else {

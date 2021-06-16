@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+    background-color: white;
+    border-radius: 15px;
+    width: 530px;
+    padding: 13px;
+    margin-bottom: 135px;
+}
+
+h2{
+    font-family: roboto;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+p{
+    font-family: roboto;
+    font-weight: 600;
+}
+
+a{
+    text-decoration: none;
+    border: none;
+}
+
+.btn{
+    font-family: roboto;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+}

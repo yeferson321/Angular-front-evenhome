@@ -1,0 +1,217 @@
+<app-nav1></app-nav1>
+
+<div id="container" class="container">
+
+    <div id="information">
+
+        <img src="https://i.pinimg.com/originals/59/e4/8c/59e48cb1d07bf70c41280a3a3f45d404.gif" style="height: 150px;"
+            class="img-thumbnail" alt="...">
+
+        <span class="title_span">
+            ¿Ya eres miembro?
+            <a class="link-to" href="" [routerLink]="['/inicio_usuario']">Inicia sesión aquí</a>
+        </span>
+
+    </div>
+
+    <div id="form">
+
+        <form class="needs-validation" novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+
+            <div class="record_title">
+                <h2>Registrate tu empresa! ingresa tus datos</h2>
+            </div>
+
+            <div class="row">
+
+                <div class="col mb-3">
+                    <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre"
+                        aria-label="Nombre" id="validationCustom01" required>
+                </div>
+                <div class="col mb-3">
+                    <input formControlName="apellidos" type="text" class="form-control" placeholder="Apellidos"
+                        aria-label="Apellidos" id="validationCustom01" required>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col mb-3">
+                    <input formControlName="telefono" type="text" class="form-control" placeholder="Telefono"
+                        aria-label="Telefono" id="validationCustom01" required>
+                </div>
+    
+                <div class="col mb-3">
+                    <input formControlName="contraseña" type="password" class="form-control" placeholder="Contraseña"
+                        aria-label="Contraseña" id="validationCustom01" required>
+                </div>
+                
+            </div>
+
+            <div class="mb-3">
+                <input formControlName="correo" type="email" class="form-control" placeholder="Correo"
+                    aria-label="Correo" id="validationCustom01" required>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col mb-3">
+                    <input formControlName="nombrempresa" type="text" class="form-control"
+                        placeholder="Nombre de la empresa" aria-label="Nombre de la empresa" id="validationCustom01"
+                        required>
+                </div>
+                <div class="col mb-3">
+                    <input formControlName="denominacionsocial" type="text" class="form-control"
+                        placeholder="Nombre legal Empresa (ACME S.L.)" aria-label="Nombre legal Empresa (ACME S.L.)"
+                        id="validationCustom01" required>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col  mb-3">
+                    <label id="titu">Pais *</label>
+                    <select formControlName="pais" class="form-select" aria-label="Default select example" id="validationCustom01" required>
+                        <option value="argentina">Argentina</option>
+                        <option value="bolivia">Bolivia</option>
+                        <option value="brasil">Brasil</option>
+                        <option value="chile">Chile</option>
+                        <option value="colombia">Colombia</option>
+                        <option value="costa Rica">Costa Rica</option>
+                        <option value="cuba">Cuba</option>
+                        <option value="ecuador">Ecuador</option>
+                        <option value="el salvador">El Salvador</option>
+                        <option value="guatemala">Guatemala</option>
+                        <option value="haiti">Haití</option>
+                        <option value="honduras">Honduras</option>
+                        <option value="mexico">México</option>
+                        <option value="nicaragua">Nicaragua</option>
+                        <option value="panama">Panamá</option>
+                        <option value="paraguay">Paraguay</option>
+                        <option value="peru">Perú</option>
+                        <option value="republica dominicana">República Dominicana</option>
+                        <option value="uruguay">Uruguay</option>
+                        <option value="venezuela">Venezuela</option>
+                    </select>
+                </div>
+
+                <div class="col  mb-3">
+                    <label id="titu">Tamaño empresa *</label>
+                    <select formControlName="tamañoempresa" class="form-select" aria-label="Default select example" id="validationCustom01" required>
+                        <option value="de 1 a 5 trabajadores">De 1 a 5 trabajadores</option>
+                        <option value="de 6 a 10 trabajadores">De 6 a 10 trabajadores</option>
+                        <option value="de 11 a 50 trabajadores">De 11 a 50 trabajadores</option>
+                        <option value="de 51 a 100 trabajadores">De 51 a 100 trabajadores</option>
+                        <option value="de 101 a 250 trabajadores">De 101 a 250 trabajadores</option>
+                        <option value="de 251 a 500 trabajadores">De 251 a 500 trabajadores</option>
+                        <option value="mass de 501 trabajadores">Más de 501 trabajadores</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col  mb-3">
+                    <input formControlName="ciudad" type="text" class="form-control" placeholder="Ciudad"
+                        aria-label="Ciudad en la que vive" id="validationCustom01" required>
+                </div>
+
+                <div class="col  mb-3">
+                    <input formControlName="codigo" type="text" class="form-control" placeholder="Código Id. Fiscal"
+                        aria-label="Código Id. Fiscal" id="validationCustom01" required>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col  mb-3">
+                    <input formControlName="direccion" type="text" class="form-control" placeholder="Dirección"
+                        aria-label="Dirección de la empresa" id="validationCustom01" required>
+                </div>
+
+                <div class="col  mb-3">
+                    <input formControlName="telefonoempresa" type="text" class="form-control" placeholder="Telefono empresa"
+                        aria-label="Telefono empresa" id="validationCustom01" required>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col">
+                    <label id="titu">Actividad de empresa *</label>
+                    <select formControlName="actividad" class="form-select" aria-label="Default select example" id="validationCustom01" required>
+                        <option value="Agroalimentario">Agroalimentario</option>
+                        <option value="Automoción y Componentes">Automoción y Componentes</option>
+                        <option value="Administración Pública">Administración Pública</option>
+                        <option value="Comunicación">Comunicación</option>
+                        <option value="Comercio-Distribución">Comercio-Distribución</option>
+                        <option value="Construcción-Contratas">Construcción-Contratas</option>
+                        <option value="Consultoría y R.R.H.H">Consultoría y R.R.H.H</option>
+                        <option value="Consultoría Tecnológica">Consultoría Tecnológica</option>
+                        <option value="Energético">Energético</option>
+                        <option value="Enseñanza-Formación">Enseñanza-Formación</option>
+                        <option value="Farmacéutico-Químico">Farmacéutico-Químico</option>
+                        <option value="Financieras-Aseguradoras">Financieras-Aseguradoras</option>
+                        <option value="Hardware Sistemas de Telecomunicación">Hardware Sistemas de Telecomunicación
+                        </option>
+                        <option value="Hardware Sistemas de Informática">Hardware Sistemas de Informática</option>
+                        <option value="Hostelería-Turismo">Hostelería-Turismo</option>
+                        <option value="Madera-Mueble">Madera-Mueble</option>
+                        <option value="Metalurgia">Metalurgia</option>
+                        <option value="Sanitario">Sanitario</option>
+                        <option value="Software">Software</option>
+                        <option value="Servicios">Servicios</option>
+                        <option value="Servicios de Telecomunicación">Servicios de Telecomunicación</option>
+                        <option value="Servicios de Informática">Servicios de Informática</option>
+                        <option value="Servicios de Valor Añadido">Servicios de Valor Añadido</option>
+                        <option value="Servicios Audiovisuales y Multimedia">Servicios Audiovisuales y Multimedia
+                        </option>
+                        <option value="Servicios de Mantenimiento">Servicios de Mantenimiento</option>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Textil">Textil</option>
+                        <option value="Otras">Otras</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="col">
+                <label for="exampleFormControlTextarea1" class="form-label">Descripción de la Empresa</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="descripcion"
+                    placeholder="Descripción de la empresa" aria-label="Descripción de la empresa" id="validationCustom01" required></textarea>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="condiciones" id="inlineRadio1" value="aceptado"
+                    id="invalidCheck" required>
+                <label class="form-check-label" for="inlineRadio1">Al registrarte, aceptas nuestros Terminos y
+                    Condiciones,
+                    y Politicas de Privacidad y Cookies</label>
+                <div class="invalid-feedback">
+                    Debes estar de acuerdo antes de registrarse.
+                </div>
+            </div>
+
+            <div class="d-grid gap-2" id="butt" *ngIf="load">
+                <button type="submit" class="btn btn-primary">Registrarte</button>
+            </div>
+
+            <div class="d-grid gap-2" id="butt" *ngIf="!load">
+                <button class="btn btn-primary" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Loading...
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

@@ -153,3 +153,105 @@ svg#freepik_stories-working-remotely.animated #freepik--Drink--inject-105 {
 .animator-hidden {
     display: none;
 }
+
+.spinne{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 37%;
+}
+
+.input-group>.form-control, .input-group>.form-select {
+    border-radius: 15px;
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+}
+
+.conteiner2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 6%;
+    margin: 7% 7% 3% 7%;
+    flex-direction: column;
+}
+
+.conteiner3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+}
+
+.titulo{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding-bottom: 5%;
+    text-align: center;
+}
+
+img, svg {
+    vertical-align: middle;
+    margin-bottom: 5%;
+}
+
+.titulo>h5{
+    color: #404145;
+    font-family: revert;
+    font-size: 160%;
+}
+
+.h6, h6 {
+    font-size: 1rem;
+    color: #404145;
+}
+
+.caja{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3%;
+}
+
+.caja>p{
+    color: #62646a;
+}
+
+.container4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: #d6e1fd;
+    border: 20px solid #ff2a2a34;
+    height: auto;
+    padding: 80px 0px 80px 0px;
+    border-width: 0px 0px 0px 0px;
+}
+
+.container4>h5{
+    color: #7b7c82;
+    margin-bottom: 30px;
+    font-family: revert;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #4a73e8;
+    border-color: #4a73e8;
+}
+
+.btn {
+    font-weight: 700;
+}

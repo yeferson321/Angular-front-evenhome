@@ -27,6 +27,10 @@
     padding-bottom: .5rem;
 }
 
+.navbar-nav {
+    display: contents;
+}
+
 .bg-light {
     background-color: #ffffff!important;
 }
@@ -104,4 +108,13 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80%;
+}
+
+.dropdown-menu {
+    min-width: auto;
+}
+
+.dropdown-menu-lg-start[data-bs-popper] {
+    right: 50%;
+    left: -70px;
 }

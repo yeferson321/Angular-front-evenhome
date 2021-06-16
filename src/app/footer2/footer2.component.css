@@ -1,0 +1,17 @@
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #7a7d85;
+}
+
+a {
+    color: #7a7d85;
+    text-decoration: underline;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.title {
+    font-size: 115%;
+    color: #54565a;
+}

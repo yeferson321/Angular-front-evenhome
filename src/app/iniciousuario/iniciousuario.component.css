@@ -137,6 +137,7 @@
     background-color: #FF441F;
     border-color:#FF441F;
     border-radius: 15px;
+    margin-top: 15px;
 }
 
 #butt>.btn-primary:hover{
@@ -144,4 +145,15 @@
     background-color: deepskyblue;
     border-color:deepskyblue;
     border-radius: 15px;
+    margin-top: 15px;
 }
+
+.form-control.is-valid, .was-validated .form-control:valid {
+    border-color: deepskyblue;
+    padding-right: calc(1.5em + .75rem);
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+

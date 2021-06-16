@@ -1,0 +1,182 @@
+<app-nav4></app-nav4>
+
+<div class="contenedor">
+    <form class="needs-validation" novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="container_h2">
+            <h2>
+                Termina tus datos basicos
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label id="titu">Nombre</label>
+                <input formControlName="nombre" type="text" class="form-control" placeholder="{{auth.getCourrentUser()}}"
+                    aria-label="Nombre" id="validationCustom01" required>
+            </div>
+            <div class="col">
+                <label id="titu">Apellidos</label>
+                <input formControlName="apellidos" type="text" class="form-control" placeholder="{{auth.getCourrentApellidos()}}"
+                    aria-label="Apellidos" id="validationCustom01" required>
+            </div>
+            <div class="col">
+                <label id="titu">Género *</label>
+                <select formControlName="genero" class="form-select" aria-label="Default select example"  id="validationCustom01" required>
+                    <option value="" selected="selected">Selecciona Género</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label id="titu">Tipo de identificación *</label>
+                <select formControlName="tipoidentificacion" class="form-select" aria-label="Default select example"  id="validationCustom01" required>
+                    <option value="" selected="selected">Selecciona Tipo de identificación</option>
+                    <option value="cedula de ciudadania">Cédula de ciudadanía</option>
+                    <option value="cedula de extranjeria">Cédula de extranjería</option>
+                    <option value="tarjeta de identidad">Tarjeta de identidad</option>
+                    <option value="pasaporte">Pasaporte</option>
+                    <option value="numero de identificacion">Número de Identificación</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="col">
+                <label id="titu">Identificacion</label>
+                <input formControlName="identificacion" type="text" class="form-control"
+                    placeholder="Numero de identificación" aria-label="Numero de identificación"  id="validationCustom01" required>
+            </div>
+            <div class="col">
+                <label id="titu">Funciones hoja de vida *</label>
+                <select formControlName="cargo" class="form-select" aria-label="Default select example"  id="validationCustom01" required>
+                    <option value="" selected="selected">Funciones profesionales</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Administrativo">Administrativo</option>
+                    <option value="Analista">Analista</option>
+                    <option value="Analista Programador">Analista Programador</option>
+                    <option value="Arquitecto TIC">Arquitecto TIC</option>
+                    <option value="Auditor">Auditor</option>
+                    <option value="Big Data">Big Data</option>
+                    <option value="Ciberseguridad">Ciberseguridad</option>
+                    <option value="Comercial">Comercial</option>
+                    <option value="Consultor">Consultor</option>
+                    <option value="Desarrollador Móvil">Desarrollador Móvil</option>
+                    <option value="Desarrollador Web">Desarrollador Web</option>
+                    <option value="DevOps">DevOps</option>
+                    <option value="Diseño">Diseño</option>
+                    <option value="Electrónica">Electrónica</option>
+                    <option value="Formador">Formador</option>
+                    <option value="Helpdesk">Helpdesk</option>
+                    <option value="I+D">I+D</option>
+                    <option value="Jefe de Equipo">Jefe de Equipo</option>
+                    <option value="Jefe de Proyecto">Jefe de Proyecto</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Migración de Datos">Migración de Datos</option>
+                    <option value="Operador">Operador</option>
+                    <option value="Programador">Programador</option>
+                    <option value="Reclutador">Reclutador</option>
+                    <option value="Redes">Redes</option>
+                    <option value="Responsable de Producto">Responsable de Producto</option>
+                    <option value="SEO/Posicionamiento Web">SEO/Posicionamiento Web</option>
+                    <option value="Sistemas de Calidad">Sistemas de Calidad</option>
+                    <option value="Soporte Técnico">Soporte Técnico</option>
+                    <option value="Técnico de Bases de Datos">Técnico de Bases de Datos</option>
+                    <option value="Técnico de Gestión">Técnico de Gestión</option>
+                    <option value="Técnico de Mantenimiento">Técnico de Mantenimiento</option>
+                    <option value="Técnico de Sistemas">Técnico de Sistemas</option>
+                    <option value="Técnico Hardware">Técnico Hardware</option>
+                    <option value="Técnico Software">Técnico Software</option>
+                    <option value="Tester">Tester</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label id="titu">Fecha Nacimiento</label>
+                <input formControlName="fechanacimiento" type="date" class="form-control" placeholder="Fecha Nacimiento"
+                    aria-label="Fecha Nacimiento"  id="validationCustom01" required>
+            </div>
+            <div class="col">
+                <label id="titu">Estado civil *</label>
+                <select formControlName="estadocivil" formControlName="estadocivil" class="form-select"
+                    aria-label="Default select example"  id="validationCustom01" required>
+                    <option value="" selected="selected">Selecciona Estado civil</option>
+                    <option value="soltero(a)">Soltero(a)</option>
+                    <option value="casado(a)">Casado(a)</option>
+                    <option value="separado(a)">Separado(a)</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label id="titu">Telefono contacto</label>
+                <input formControlName="telefono" type="tel" class="form-control" placeholder="Telefono de contacto"
+                    aria-label="Telefono contacto"  id="validationCustom01" required>
+            </div>
+            <div class="col">
+                <label id="titu">Otro teléfono</label>
+                <input formControlName="otrotelefono" type="tel" class="form-control" placeholder="Otro teléfono de contacto"
+                    aria-label="Otro teléfono de contacto"  id="validationCustom01" required>
+            </div>
+            <div class="col">
+                <label id="titu">Hora de contacto *</label>
+                <select formControlName="horadecontacto" formControlName="horadecontacto" class="form-select"
+                    aria-label="Default select example"  id="validationCustom01" required>
+                    <option value="" selected="selected">Selecciona Hora de contacto</option>
+                    <option value="todo el dia">Todo el dia</option>
+                    <option value="mañana">Mañana</option>
+                    <option value="medio dia">Medio dia</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noche">Noche</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label id="titu">Pais *</label>
+                <select formControlName="pais" class="form-select" aria-label="Default select example"  id="validationCustom01" required>
+                    <option value="" selected="selected">Selecciona Pais</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="bolivia">Bolivia</option>
+                    <option value="brasil">Brasil</option>
+                    <option value="chile">Chile</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="costa Rica">Costa Rica</option>
+                    <option value="cuba">Cuba</option>
+                    <option value="ecuador">Ecuador</option>
+                    <option value="el salvador">El Salvador</option>
+                    <option value="guatemala">Guatemala</option>
+                    <option value="haiti">Haití</option>
+                    <option value="honduras">Honduras</option>
+                    <option value="mexico">México</option>
+                    <option value="nicaragua">Nicaragua</option>
+                    <option value="panama">Panamá</option>
+                    <option value="paraguay">Paraguay</option>
+                    <option value="peru">Perú</option>
+                    <option value="republica dominicana">República Dominicana</option>
+                    <option value="uruguay">Uruguay</option>
+                    <option value="venezuela">Venezuela</option>
+                </select>
+            </div>
+            <div class="col">
+                <label id="titu">Ciudad</label>
+                <input formControlName="ciudad" type="text" class="form-control" placeholder="Ciudad en la que vive"
+                    aria-label="Ciudad en la que vive"  id="validationCustom01" required>
+            </div>
+            <div class="col">
+                <label id="titu">Direccion</label>
+                <input formControlName="direccion" type="text" class="form-control" placeholder="Direcciónde su residencia"
+                    aria-label="Dirección de su residencia"  id="validationCustom01" required>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2" id="butt">
+            <button type="submit" class="btn btn-primary">Actualizar datos</button>
+        </div>
+    </form>
+</div>

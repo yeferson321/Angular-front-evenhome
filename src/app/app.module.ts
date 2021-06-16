@@ -14,6 +14,29 @@ import { EducacionComponent } from './educacion/educacion.component';
 import { RouterinicioComponent } from './routerinicio/routerinicio.component';
 import { PerfilusuarioComponent } from './perfilusuario/perfilusuario.component';
 import { Nav3Component } from './nav3/nav3.component';
+import { ActualizardatosComponent } from './actualizardatos/actualizardatos.component';
+import { Nav4Component } from './nav4/nav4.component';
+import { VisualizacvComponent } from './visualizacv/visualizacv.component';
+import { EditarcvComponent } from './editarcv/editarcv.component';
+import { InicioempresaComponent } from './inicioempresa/inicioempresa.component';
+import { RegistroempresaComponent } from './registroempresa/registroempresa.component';
+import { EmpresasComponent } from './empresas/empresas.component';
+import { EmpleoComponent } from './empleo/empleo.component';
+import { EditarcvidiomaComponent } from './editarcvidioma/editarcvidioma.component';
+import { EditaridiomaComponent } from './editaridioma/editaridioma.component';
+import { ActualizardatosempresaComponent } from './actualizardatosempresa/actualizardatosempresa.component';
+import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component';
+import { EditarimgComponent } from './editarimg/editarimg.component';
+import { EditarrolesComponent } from './editarroles/editarroles.component';
+import { EditarexperienciasComponent } from './editarexperiencias/editarexperiencias.component';
+import { EditarformacionComponent } from './editarformacion/editarformacion.component';
+import { EditarhabilidadesComponent } from './editarhabilidades/editarhabilidades.component';
+import { FooterComponent } from './footer/footer.component';
+import { PublicarofertaComponent } from './publicaroferta/publicaroferta.component';
+import { DestacarofertaComponent } from './destacaroferta/destacaroferta.component';
+import { PlanesempresaComponent } from './planesempresa/planesempresa.component';
+import { Footer2Component } from './footer2/footer2.component';
+import { EditarcvempresaComponent } from './editarcvempresa/editarcvempresa.component';
 
 
 @NgModule({
@@ -28,6 +51,29 @@ import { Nav3Component } from './nav3/nav3.component';
     RouterinicioComponent,
     PerfilusuarioComponent,
     Nav3Component,
+    ActualizardatosComponent,
+    Nav4Component,
+    VisualizacvComponent,
+    EditarcvComponent,
+    InicioempresaComponent,
+    RegistroempresaComponent,
+    EmpresasComponent,
+    EmpleoComponent,
+    EditarcvidiomaComponent,
+    EditaridiomaComponent,
+    ActualizardatosempresaComponent,
+    PerfilempresaComponent,
+    EditarimgComponent,
+    EditarrolesComponent,
+    EditarexperienciasComponent,
+    EditarformacionComponent,
+    EditarhabilidadesComponent,
+    FooterComponent,
+    PublicarofertaComponent,
+    DestacarofertaComponent,
+    PlanesempresaComponent,
+    Footer2Component,
+    EditarcvempresaComponent,
   ],
   imports: [
     BrowserModule,

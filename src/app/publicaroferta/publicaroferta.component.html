@@ -1,0 +1,144 @@
+<app-nav4></app-nav4>
+
+<div class="contenedor">
+    <form class="needs-validation" novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="container_h2">
+            <h2>
+                PUBLICAR UN TRABAJO
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label id="titu">Título del Trabajo</label>
+                <input formControlName="trabajo" type="text" class="form-control" placeholder="Título del Trabajo"
+                    aria-label="Título del Trabajo" id="validationCustom01" required>
+            </div>
+
+            <div class="col">
+                <label id="titu">¿Qué profesiones requieres?</label>
+                <select formControlName="profesiones" class="form-select" aria-label="Default select example" 
+                    id="validationCustom01" required>
+                    <option value="" selected="selected">Selecciona Tipo de Profesiones</option>
+                    <option value="administrador de proyectos">Administrador de Proyectos</option>
+                    <option value="asistente virtual">Asistente Virtual</option>
+                    <option value="atención al cliente">Atención Al Cliente</option>
+                    <option value="bookkeeper">Bookkeeper</option>
+                    <option value="community manager">Community Manager</option>
+                    <option value="contador">Contador</option>
+                    <option value="creador de contenido">Creador de Contenido</option>
+                    <option value="desarrollador movil">Desarrollador Móvil</option>
+                    <option value="desarrollador web">Desarrollador Web</option>
+                    <option value="desarrollador wordpress">Desarrollador Wordpress</option>
+                    <option value="diseñador grafico">Diseñador Gráfico</option>
+                    <option value="especialista en seo">Especialista en SEO</option>
+                    <option value="ilustrador">Ilustrador</option>
+                    <option value="programador">Programador</option>
+                    <option value="reclutador">Reclutador</option>
+                    <option value="recursos humanos">Recursos humanos</option>
+                    <option value="redactor de contenido">Redactor de Contenido</option>
+                    <option value="traductor">Traductor</option>
+                    <option value="ventas y mercadeo">Ventas y Mercadeo</option>
+                    <option value="">Otro</option>
+                </select>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+
+            <div class="col">
+                <label id="titu">Selecciona la experiencia requerida</label>
+                <select formControlName="experiencia" class="form-select" aria-label="Default select example"
+                    id="validationCustom01" required>
+                    <option value="" selected="selected">Selecciona la experiencia</option>
+                    <option value="nivel tecnico">Nivel Técnico</option>
+                    <option value="nivel tecnologico">Nivel Tecnológico</option>
+                    <option value="nivel profesional">Nivel Profesional</option>
+                    <option value="especializacion">Especializacion</option>
+                    <option value="maestria">Maestría</option>
+                    <option value="doctorado">Doctorado</option>
+                </select>
+            </div>
+
+            <div class="col">
+                <label id="titu">(Herramientas requeridas)</label>
+                <input formControlName="herramientas" type="text" class="form-control"
+                    placeholder="Facebook Ads, Python, Photoshop, etc..."
+                    aria-label="Facebook Ads, Python, Photoshop, etc..." id="validationCustom01" required>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col">
+                <label id="titu">Duración del trabajo</label>
+                <select formControlName="duracion" class="form-select" aria-label="Default select example"
+                    id="validationCustom01" required>
+                    <option value="" selected="selected">Selecciona la duración del trabajo</option>
+                    <option value="proyecto">Proyecto</option>
+                    <option value="dedicacion plena">Dedicación Plena</option>
+                    <option value="tiempo parcial">Tiempo Parcial</option>
+                </select>
+            </div>
+
+            <div class="col">
+                <label id="titu">Nivel de inglés</label>
+                <select formControlName="nivel" class="form-select" aria-label="Default select example"
+                    id="validationCustom01" required>
+                    <option value="" selected="selected">Seleccionar el nivel de inglés</option>
+                    <option value="principiante">Principiante</option>
+                    <option value="intermedio">Intermedio</option>
+                    <option value="avanzado">Avanzado</option>
+                    <option value="no requerido">No requerido</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col">
+                <label id="titu">Tiempo de empleo</label>
+                <div class="check">
+                    <div class="form-check">
+                        <input formControlName="empleo" class="form-check-input" type="radio" name="empleo" id="flexRadioDefault1" value="tiempo completo" id="validationCustom01" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Tiempo Completo
+                        </label>
+                    </div>
+                    <div class="form-check check_input">
+                        <input  formControlName="empleo" class="form-check-input" type="radio" name="empleo" id="flexRadioDefault2" value="medio tiempo" id="validationCustom01" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Medio Tiempo
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <label id="titu">Salario</label>
+                <input formControlName="salario" type="text" class="form-control"
+                    placeholder="Escribe un numero sin puntos y comas"
+                    aria-label="Salario" id="validationCustom01" required>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col">
+                <label id="titu">Descripción del puesto de trabajo</label>
+                <input formControlName="descripcion" type="text" class="form-control"
+                    placeholder="Descripción del puesto de trabajo" aria-label="Descripción del puesto de trabajo"
+                    id="validationCustom01" required>
+            </div>
+
+        </div>
+
+        <div class="d-grid gap-2" id="butt">
+            <button type="submit" class="btn btn-primary">Publicar oferta</button>
+        </div>
+    </form>
+</div>

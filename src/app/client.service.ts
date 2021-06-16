@@ -7,7 +7,6 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 export class ClientService {
 
   constructor(private http: HttpClient) { }
-
   
   getRequest(route: string,token?:string) {
     
@@ -45,6 +44,44 @@ export class ClientService {
     }
   
     return this.http.get(route, config);
+  }
+
+  getRequestdatos_user(route: string,token?:string) {
+    
+    let config:any = {
+      responseType: "json"
+    }
+
+    if (token){
+      const header = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+      config["headers"] = header;
+    }
+    console.log(config);
+
+    return this.http.get(route, config)
+  }
+
+  getRequestdatos_idioma(route: string,token?:string) {
+    
+    let config:any = {
+      responseType: "json"
+    }
+
+    if (token){
+      const header = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+      config["headers"] = header;
+    }
+    console.log(config);
+
+    return this.http.get(route, config)
+  }
+  
+  postReques(route: string, data?:any) {
+    let config:any = {
+      responseType: "json"
+    }
+    
+    return this.http.post(route, data, config);
   }
 
 }

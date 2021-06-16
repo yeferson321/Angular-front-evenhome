@@ -29,51 +29,49 @@
 
     <div id="form">
 
-        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <form class="needs-validation" novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
 
             <div class="record_title">
-                <h2>Registrate! ingresa tus datos</h2>
+                <h2>Crea una cuenta de Trabajador</h2>
             </div>
 
             <div class="row">
                 <div class="col mb-3">
                     <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre"
-                        aria-label="Nombre">
+                        aria-label="Nombre" id="validationCustom01" required>
                 </div>
                 <div class="col mb-3">
-                    <input formControlName="apellido" type="text" class="form-control" placeholder="Apellido"
-                        aria-label="Apellido">
+                    <input formControlName="apellidos" type="text" class="form-control" placeholder="Apellidos"
+                        aria-label="Apellidos" id="validationCustom01" required>
                 </div>
             </div>
 
             <div class="mb-3">
                 <input formControlName="correo" type="email" class="form-control" placeholder="Correo"
-                    aria-label="Correo">
+                    aria-label="Correo" id="validationCustom01" required>
             </div>
 
-            <div class="row">
-                <div class="col mb-3">
-                    <input formControlName="telefono" type="tel" class="form-control" placeholder="Telefono movil"
-                        aria-label="Telefono movil">
-                </div>
-                <div class="col mb-3">
-                    <input formControlName="contraseña" type="text" class="form-control" placeholder="Contraseña"
-                        aria-label="Contraseña">
-                </div>
+            <div class="col mb-3">
+                <input formControlName="contraseña" type="password" class="form-control" placeholder="Contraseña"
+                    aria-label="Contraseña" id="validationCustom01" required>
             </div>
 
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Al registrarte, aceptas nuestros Terminos y
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="condiciones" id="inlineRadio1" value="aceptado"
+                    formControlName="condiciones" id="invalidCheck" required>
+                <label class="form-check-label" for="inlineRadio1">Al registrarte, aceptas nuestros Terminos y
                     Condiciones,
                     y Politicas de Privacidad y Cookies</label>
+                    <div class="invalid-feedback">
+                        Debes estar de acuerdo antes de registrarse.
+                    </div>
             </div>
 
             <div class="d-grid gap-2" id="butt" *ngIf="load">
                 <button type="submit" class="btn btn-primary">Registrarte</button>
             </div>
 
-            <div class="d-grid gap-2" id="butt" *ngIf="!load" >
+            <div class="d-grid gap-2" id="butt" *ngIf="!load">
                 <button class="btn btn-primary" type="button" disabled>
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                     Loading...

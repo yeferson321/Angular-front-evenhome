@@ -927,16 +927,34 @@
 
 <figure class="text-center" id="text-center">
     <blockquote class="blockquote">
-        <p>En este artículo queremos presentar plataformas especializadas y de prestigio, 
-            en las que podras realizar cursos gratis online con certificados, las plataformas proporcionadas 
+        <p>En este artículo queremos presentar plataformas especializadas y de prestigio,
+            en las que podras realizar cursos gratis online con certificados, las plataformas proporcionadas
             van enfocadas al ámbito educativo, digital o
             tecnológico de mayor demanda laboral. Aprovechar este tiempo, es una de las
-             mejores decisiones que puedes tomar en torno al autocrecimiento y expansión 
-             de tus conocimientos. Los cursos gratis en línea ofrecen tantas opciones 
-             que, la decisión más difícil será cuál vas a elegir.
-             <span class="title_span" style="color: rgb(0, 136, 255);">
+            mejores decisiones que puedes tomar en torno al autocrecimiento y expansión
+            de tus conocimientos. Los cursos gratis en línea ofrecen tantas opciones
+            que, la decisión más difícil será cuál vas a elegir.
+            <span class="title_span" style="color: rgb(0, 136, 255);">
                 Algunas de estas plataformas piden pago para obtener su certificado
             </span>
         </p>
     </blockquote>
 </figure>
+
+
+<div id="caja"> 
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col" *ngFor="let curso of cursos">
+            <div class="card h-100">
+                <img [src]="curso.img" class="card-img-top " alt="... ">
+                <div class="card-body">
+                    <h5 class="card-title ">{{curso.nombre}}</h5>
+                    <p class="card-text ">{{curso.descripcion}}</p>
+                    <a href="{{curso.link}}" class="btn btn-primary ">Conocer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer2></app-footer2>
