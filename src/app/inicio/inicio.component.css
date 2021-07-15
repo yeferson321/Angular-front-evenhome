@@ -3,8 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    background-color: #FBAB7E;
-    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);    
+    background-color:  #0a58ca; 
     min-width: -webkit-fill-available;
     height: 660px;
     padding: 55px 30px 0px 30px;
@@ -30,14 +29,13 @@
     display: flex;
     justify-content: center;
     max-width: 1200px;
-    align-items: center;
     flex-direction: column;
 }
 
 @media only screen and (max-width: 768px), screen and (orientation: portrait){
     .busqueda{
         border: 20px solid #6a962200;
-        margin: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 40px;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -47,6 +45,22 @@
     }
 }
 
+.busqueda>p{
+    font-size: x-large;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    padding: 0px 140px 0px 0px;
+    margin-bottom: 49px;
+}
+
+.button{
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.input-group{
+    padding: 0px 90px 0px 0px;
+}
 
 .imagenes{
     border: 20px solid #57be1b00;
@@ -68,99 +82,12 @@
 
 .imagenes>svg{
     width: 650px;
+    -webkit-animation: floating 8s ease-in-out infinite;
+    animation: floating 8s ease-in-out infinite;
 }
-
 
 .busqueda>p{
     color:white;
-}
-
-svg#freepik_stories-working-remotely:not(.animated) .animable {
-    opacity: 0;
-}
-
-svg#freepik_stories-working-remotely.animated #freepik--Lamp--inject-105 {
-    animation: 3s Infinite linear floating;
-    animation-delay: 0s;
-}
-
-svg#freepik_stories-working-remotely.animated #freepik--Plant--inject-105 {
-    animation: 3s Infinite linear floating;
-    animation-delay: 0s;
-}
-
-svg#freepik_stories-working-remotely.animated #freepik--character-2--inject-105 {
-    animation: 3s Infinite linear floating;
-    animation-delay: 0s;
-}
-
-svg#freepik_stories-working-remotely.animated #freepik--Dog--inject-105 {
-    animation: 3s Infinite linear floating;
-    animation-delay: 0s;
-}
-
-svg#freepik_stories-working-remotely.animated #freepik--Mug--inject-105 {
-    animation: 3s Infinite linear floating;
-    animation-delay: 0s;
-}
-
-svg#freepik_stories-working-remotely.animated #freepik--Line--inject-105 {
-    animation: 3s Infinite linear floating;
-    animation-delay: 0s;
-}
-
-svg#freepik_stories-working-remotely.animated #freepik--character-1--inject-105 {
-    animation: 3s Infinite linear floating;
-    animation-delay: 0s;
-}
-
-svg#freepik_stories-working-remotely.animated #freepik--Device--inject-105 {
-    animation: 3s Infinite linear floating;
-    animation-delay: 0s;
-}
-
-svg#freepik_stories-working-remotely.animated #freepik--Cloud--inject-105 {
-    animation: 3s Infinite linear floating;
-    animation-delay: 0s;
-}
-
-svg#freepik_stories-working-remotely.animated #freepik--Sheets--inject-105 {
-    animation: 3s Infinite linear floating;
-    animation-delay: 0s;
-}
-
-svg#freepik_stories-working-remotely.animated #freepik--Drink--inject-105 {
-    animation: 3s Infinite linear floating;
-    animation-delay: 0s;
-}
-
-@keyframes floating {
-    0% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
-
-.animator-hidden {
-    display: none;
-}
-
-.spinne{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    margin-top: 37%;
 }
 
 .input-group>.form-control, .input-group>.form-select {
@@ -186,11 +113,19 @@ svg#freepik_stories-working-remotely.animated #freepik--Drink--inject-105 {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-
 }
 
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .conteiner3{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+
 .titulo{
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -199,20 +134,37 @@ svg#freepik_stories-working-remotely.animated #freepik--Drink--inject-105 {
     text-align: center;
 }
 
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .titulo{
+        padding-bottom: 10%;
+    }
+}
+
 img, svg {
     vertical-align: middle;
     margin-bottom: 5%;
+    -webkit-animation: floating 8s ease-in-out infinite;
+    animation: floating 8s ease-in-out infinite;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    img, svg {
+        margin-bottom: 15%;
+    }
 }
 
 .titulo>h5{
-    color: #404145;
-    font-family: revert;
-    font-size: 160%;
+    color:#274674;
+    font-size: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
 }
 
 .h6, h6 {
     font-size: 1rem;
-    color: #404145;
+    color: #274674;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .caja{
@@ -224,26 +176,21 @@ img, svg {
 }
 
 .caja>p{
-    color: #62646a;
+    color: #92a7bf;
 }
 
-.container4{
+.text{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     flex-direction: column;
-    background-color: #d6e1fd;
-    border: 20px solid #ff2a2a34;
-    height: auto;
-    padding: 80px 0px 80px 0px;
-    border-width: 0px 0px 0px 0px;
+    align-items: flex-start;
+    justify-content: center;
 }
 
-.container4>h5{
-    color: #7b7c82;
-    margin-bottom: 30px;
-    font-family: revert;
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .text{
+        align-items: center;
+        margin-bottom: 15%;
+    } 
 }
 
 .btn-primary {
@@ -253,5 +200,102 @@ img, svg {
 }
 
 .btn {
+    border-radius: 10px;
+}
+
+.container3{
+    display: flex;
+    padding: 60px 100px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .container3{     
+        flex-direction: column;
+        padding: 40px 70px;
+        text-align: center;
+    }  
+}
+
+.text2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 170px;
+    align-items: flex-start;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .text2{
+        padding-left: 0px;
+        align-items: center;
+    }
+}
+
+.text2>h3{
+    font-size: 25px;
+    color: #204672;
+    padding-bottom: 10px;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
+}
+
+.text2>p{
+    font-size: 17px;
+    color: #204672;
+    padding-bottom: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+}
+
+
+.text>h3{
+    font-size: 25px;
+    color: #204672;
+    padding-bottom: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+}
+
+.text>p{
+    font-size: 17px;
+    color: #204672;
+    padding-bottom: 10px;
+    padding-right: 150px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .text>p{
+        padding-right: 0px;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes floating {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }

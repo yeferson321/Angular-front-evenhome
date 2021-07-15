@@ -1,14 +1,13 @@
 .fondo{
-    margin: 100px 100px 100px 100px;
+    margin: 100px 200px 100px 200px;
     text-align: center;
     background-color: white;
     border: 1px solid #0000002d;
     border-radius: 15px;
-    padding: 22px;
+    padding: 40px 10% 40px 10%;
     display: flex;
     align-content: center;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
 }
 
@@ -43,4 +42,10 @@
 .btn{
     border-radius: 15px;
     margin: 16px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #4a73e8;
+    border-color: #4a73e8;
 }

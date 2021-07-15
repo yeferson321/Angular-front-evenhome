@@ -3,8 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    background-color: #0093E9;
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    background-image: linear-gradient(160deg, #0a58ca 0%, #80D0C7 100%);
     border: 20px solid #ff2a2a34;
     min-width: -webkit-fill-available;
     height: auto;
@@ -112,7 +111,6 @@
     background: #eee6e60c;
     height: auto;
     width: auto;
-    padding: 30px;
     margin: 80px;
     margin-top: 4%;
 }
@@ -147,6 +145,18 @@
 
 }
 
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.card-title {
+    margin-bottom: 1.5rem;
+    color: rgb(0, 136, 255);
+}
+
 .row {
     margin: 4%;
 }
@@ -167,38 +177,20 @@
     
 }
 
-.card-img, .card-img-bottom, .card-img-top {
-    width: 100%;
-    padding: 10%;
+.card{
+    border-radius: 8%; 
 }
 
-
-
-.border-light {
-    border-color: #f8f9fa!important;
-    border-radius: 12px;
-    flex-direction: column;
-    align-items: center;
+.img-fluid {
+    max-width: 100%;
+    height: auto;
 }
 
-
-svg#freepik_stories-learning:not(.animated) .animable {
-    opacity: 0;
-}
-
-svg#freepik_stories-learning.animated #freepik--background-complete--inject-5 {
-    animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideLeft;
-    animation-delay: 0s;
-}
-
-svg#freepik_stories-learning.animated #freepik--Elements--inject-5 {
-    animation: 3s Infinite linear floating;
-    animation-delay: 0s;
-}
-
-svg#freepik_stories-learning.animated #freepik--Device--inject-5 {
-    animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideLeft, 3s Infinite linear floating;
-    animation-delay: 0s, 1s;
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    -webkit-animation: floating 8s ease-in-out infinite;
+    animation: floating 8s ease-in-out infinite;
 }
 
 @keyframes slideLeft {

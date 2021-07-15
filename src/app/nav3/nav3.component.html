@@ -8,35 +8,25 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
 
+
                 <li class="nav-item" *ngIf="!(auth.isLoggedIn() | async)">
                     <a class="nav-link" [routerLink]="['/empresa']">Empresas</a>
                 </li>
-
-                <div *ngIf="!(auth.isLoggedInAdmin() | async)">
-                    <div *ngIf="auth.isLoggedIn() | async" class="right">
-                        <button type="button" href="" [routerLink]="['/empleo']" class="btn btn-primary btn-sm">Busca
-                            Trabajados Remotos</button>
-                    </div>
+                
+                <div *ngIf="auth.isLoggedIn() | async" class="right" >
+                    <button type="button" href="" [routerLink]="['/empleo']"
+                        class="btn btn-primary btn-sm">Busca Trabajados Remotos</button>
                 </div>
 
-                <div *ngIf="auth.isLoggedInAdmin() | async" class="right">
-                    <button type="button" href="" [routerLink]="['/publicar_oferta']"
-                        class="btn btn-primary btn-sm">Publicar oferta</button>
-                </div>
-
-                <li class="nav-item" *ngIf="auth.isLoggedInAdmin() | async">
-                    <a class="nav-link" [routerLink]="['/planes_empresa']">Precios</a>
+                <li class="nav-item" >
+                    <a class="nav-link" *ngIf="auth.isLoggedIn() | async" [routerLink]="['/editar_cv']">Mejora tu perfil</a>
                 </li>
 
-                <li class="nav-item" *ngIf="auth.isLoggedIn() | async">
-                    <a class="nav-link" [routerLink]="['/editar_cv']">Mejora tu perfil</a>
-                </li>
-
-                <li class="nav-item" *ngIf="!(auth.isLoggedInAdmin() | async)">
+                <li class="nav-item" >
                     <a class="nav-link" href="" [routerLink]="['/educacion']">Formacion</a>
                 </li>
 
-                <li *ngIf="!(auth.isLoggedIn() | async)" class="nav-item">
+                <li  class="nav-item">
                     <a class="nav-link" href="" [routerLink]="['/empleo']">Empleo</a>
                 </li>
 
@@ -46,6 +36,7 @@
                     <button type="button" href="" [routerLink]="['/registro_usuario']"
                         class="btn btn-primary btn-sm">Registrarme</button>
                 </div>
+
 
                 <li *ngIf="auth.isLoggedIn() | async" class="nav-item dropdown">
                     <a class="nav-link " data-bs-toggle="dropdown" role="button" aria-expanded="false"
@@ -60,8 +51,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#" [routerLink]="['/']" (click)="auth.logout()"
-                                (click)="auth.logoutAdmin()">Salir</a>
+                        <li><a class="dropdown-item" href="#" [routerLink]="['/']" (click)="auth.logout()">Salir</a>
                         </li>
                     </ul>
                 </li>

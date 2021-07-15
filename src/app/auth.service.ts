@@ -9,6 +9,7 @@ export class AuthService {
   //el BehaviorSubject que nos permitirá guardar el estado de login
   //tendrá un estado inicial booleano según lo que retorne checkToken
   isLogin = new BehaviorSubject<boolean>(this.checkToken());
+  isLoginAdmin = new BehaviorSubject<boolean>(this.checkToken());
 
   //el BehaviorSubject que nos permitirá saber si somos admin o no
   admin = new BehaviorSubject<boolean>(null);
@@ -35,7 +36,7 @@ export class AuthService {
 
     localStorage.setItem('token', token);
     this.admin.next(true);
-    this.isLogin.next(true);
+    this.isLoginAdmin.next(true);
   }
 
   //método que nos permite establecer el nombre del usuario
@@ -82,6 +83,21 @@ export class AuthService {
     localStorage.removeItem('courrentCorreo');
   }
 
+  //método que nos permite establecer el nombre del usuario
+  setCourrentidUser(id_user: string): void {
+    localStorage.setItem('id_user', id_user);
+  }
+
+  //método que nos permite recuperar el nombre del usuario
+  getCourrentidUser(): string {
+    return localStorage.getItem('id_user');
+  }
+
+  //método que nos permite eliminar el nombre de usuario
+  private deleteCourrentidUser(): void {
+    localStorage.removeItem('id_user');
+  }
+
   //-------------------------empresa------------------------------------
 
   //método que nos permite establecer el nombre del usuario
@@ -114,6 +130,21 @@ export class AuthService {
     localStorage.removeItem('courrentCorreo');
   }
 
+  //método que nos permite establecer el nombre del usuario
+  setCourrentidempresa(id_user: string): void {
+    localStorage.setItem('id_user', id_user);
+  }
+
+  //método que nos permite recuperar el nombre del usuario
+  getCourrentidempresa(): string {
+    return localStorage.getItem('id_user');
+  }
+
+  //método que nos permite eliminar el nombre de usuario
+  private deleteCourrentidempresa(): void {
+    localStorage.removeItem('id_user');
+  }
+
   //método que nos permite romover el token almacenado y el nombre del
   //usuario actual y enviar una señal al BehaviorSubject para establecer
   //su nuevo valor, en este caso false para indicar que no estamos logueados
@@ -122,17 +153,20 @@ export class AuthService {
     this.deleteCourrentUser();
     this.deleteCourrentCorreo();
     this.deleteCourrentApellidos();
+    this.deleteCourrentidUser();
 
+    this.user.next(false);
     this.isLogin.next(false);
   }
 
   logoutAdmin(): void {
     localStorage.removeItem('token');
-
     this.deleteCourrentUserempresa();
     this.deleteCourrentCorreoempresa();
+    this.deleteCourrentidempresa();
 
-    this.isLogin.next(false);
+    this.admin.next(false);
+    this.isLoginAdmin.next(false);
   }
 
   //método que nos retorna el BehaviorSubject cómo un observable
@@ -141,22 +175,23 @@ export class AuthService {
   }
 
   isLoggedInAdmin(): Observable<boolean> {
-    return this.isLogin.asObservable();
-  }
-
-  /*
-  isUser() : Observable<boolean> {
-   return this.user.asObservable();
-  }
-*/
-
-  //método que nos retorna el BehaviorSubject user cómo un observable
-  isUser(): Observable<boolean> {
-    return this.user.asObservable();
+    return this.isLoginAdmin.asObservable();
   }
 
   isAdmin(): Observable<boolean> {
     return this.admin.asObservable();
   }
+
+  //setRol(Rol) {
+  //  this.admin.next(Rol);
+  //}
+
+  //getRol(): string {
+  //  return localStorage.getItem('Rol');
+  //}
+
+  //private deleteRol(): void {
+  //  localStorage.removeItem('Rol')
+  //}
 
 }

@@ -19,6 +19,11 @@ export class PerfilempresaComponent implements OnInit {
   datos_user;
   datos;
 
+  datos_anuncios;
+  data;
+
+  id_user;
+
   constructor(
     private fb: FormBuilder,
     private route: Router,
@@ -26,6 +31,38 @@ export class PerfilempresaComponent implements OnInit {
     public auth: AuthService
   ) { }
 
+  
+  eliminarDatos(id_anuncio) {
+
+    this.client.deleteRequestEliminar('http://localhost:5000/api/v01/detele/anuncio', id_anuncio).subscribe(
+
+      (response: any) => {
+
+        this.load = true;
+
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'center',
+          showConfirmButton: false,
+          timer: 1500,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+
+        Toast.fire({
+          icon: 'success',
+          title: 'Datos guardados'
+        }).then(() => {
+          this.route.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+            this.route.navigate(['perfil_empresa']));
+        })
+
+      }
+    )
+  }
   
 
   ngOnInit(): void {
@@ -36,6 +73,23 @@ export class PerfilempresaComponent implements OnInit {
         this.datos_user = datos["datos"]
 
         console.log(datos);
+
+      }, (error) => {
+
+        console.log(error);
+
+      }
+
+    )
+
+    this.id_user = localStorage.getItem("id_user")
+
+    this.client.getRequestdatosvc('http://localhost:5000/api/v01/datos/anuncios', this.id_user, localStorage.getItem('token')).subscribe(
+
+      (data): any => {
+        this.datos_anuncios = data["data"]
+
+        console.log(data);
 
       }, (error) => {
 

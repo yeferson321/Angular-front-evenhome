@@ -1,0 +1,25 @@
+.btn{
+    border-radius: 15px;
+    margin: auto;
+}
+
+.datos{
+    display: flex;
+    justify-content: center;
+}
+
+#caja{
+    margin-bottom: 8%;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #4a73e8;
+    border-color: #4a73e8;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.btn-sm{
+    margin: 5px;
+}

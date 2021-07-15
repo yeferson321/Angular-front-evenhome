@@ -1,1 +1,62 @@
-<p>empleo works!</p>
+<app-nav2></app-nav2>
+
+<div class="title">
+
+    <h3>Mejora y expande tus habilidades trabajando con emprendedores y empresas reconocidas internacionalmente..</h3>
+
+</div>
+
+<div class="caja">
+
+    <div>
+        <div class="card" style="width: 18rem;">
+            <div class="input-group mb-3">
+
+                <form [formGroup]="form">
+
+                    <div class="record_title">
+                        <p>Encuentra trabajos remotos</p>
+                    </div>
+
+                    <input type="text" formControlName="palabra" class="form-control" placeholder="Palabras clave"
+                        aria-label="Recipient's username" aria-describedby="button-addon2">
+
+                    <input type="text" formControlName="habilidad" class="form-control" placeholder="Habilidades"
+                        aria-label="Recipient's username" aria-describedby="button-addon2">
+
+                    <button class="btn btn btn-primary button" type="submit" (click)="consultarDatos()"
+                        id="button-addon2">Buscar</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="caja2">
+
+        <div class="card mb-3 car border-info" *ngFor="let datos_anuncio of datos_anuncios">
+            <div class="card-body">
+                <h5 class="card-title"> {{ datos_anuncio.profesiones | uppercase}} ({{ datos_anuncio.nombre | uppercase}}) </h5>
+
+                <div class="text">
+                    <p class="card-text">Requisitos: <a>{{ datos_anuncio.herramientas}}</a></p>
+                    <p class="card-text">Salario: <a>{{ datos_anuncio.salario | currency: 'COP':true}}</a></p>
+                    <p class="card-text">Ingles: <a>{{datos_anuncio. nivel}}</a></p>
+                    <p class="card-text">Duracion: <a>{{ datos_anuncio.duracion }}</a></p>
+                </div>
+
+                <p class="card-text">{{datos_anuncio.descripcion}}</p>
+
+                <button type="button" *ngIf="!(auth.isLoggedIn() | async)" class="btn btn-outline-info btn-sm" (click)="anuncio()" >Aplicar</button>
+
+                <button type="button" *ngIf="auth.isLoggedIn() | async" class="btn btn-outline-info btn-sm" (click)="correo(datos_anuncio.id_anuncio, datos_anuncio.usuario_id, datos_anuncio.profesiones, datos_anuncio.nombre)" >Aplicar</button>
+
+                <p class="card-text mute"><small class="text-muted">Numero de vacantes: <a>{{datos_anuncio.numerovacantes}}</a> Inscripciones a esta oferta: {{datos_anuncio.solicitudes}}</small></p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<app-footer2></app-footer2>

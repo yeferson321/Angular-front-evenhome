@@ -1,0 +1,146 @@
+<app-nav4></app-nav4>
+
+<div class="md">
+
+    <div class="card mb-3" style="max-width: 700px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <div class="avatar">
+                    <img src="../static/undraw_male_avatar_323b.svg" class="img-fluid rounded-start"
+                        alt="...">
+                </div>
+                <div *ngFor="let datos of datos_user">
+                    <h6 class="card-title" style="color: #204672;">{{datos.nombre | uppercase}} {{datos.apellidos |
+                        uppercase}}</h6>
+                    <div class="img">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="rgb(0, 255, 200)"
+                            class="bi bi-check-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path
+                                d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                        </svg>
+                        <p id="car" class="card-text"> <small class="text-muted">DISPONIBLE PARA TRABAJAR</small></p>
+                    </div>
+
+                    <div class="cargo">
+                        <a class="text"><small class="" style="color: #92a7bf;">{{datos.cargo}}</small></a>
+                    </div>
+
+                    <div class="button">
+                        <a class="btn btn-outline-primary btn-sm" href='mailto: + {{datos.correo}}' role="button">Contactar</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-8" *ngFor="let datos of datos_user">
+                <div class="card-body">
+                    <h6 class="card-title" style="color: #204672;">{{datos.correo}}</h6>
+
+                    <div class="container_datos">
+
+                        <div class="containe2">
+                            <div class="dato">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="13" fill="#204672"
+                                    class="bi bi-people" viewBox="0 0 16 16">
+                                    <path
+                                        d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
+                                </svg>
+                                <a class="text" style="font-size: 85%;">Género: <small class=""
+                                        style="color: #92a7bf;">{{datos.genero}}</small></a>
+                            </div>
+
+                            <div class="dato">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="13" fill="#204672"
+                                    class="bi bi-credit-card-2-front" viewBox="0 0 16 16">
+                                    <path
+                                        d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z" />
+                                    <path
+                                        d="M2 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z" />
+                                </svg>
+                                <a class="text" style="font-size: 85%;">Estado civil: <small class=""
+                                        style="color: #92a7bf;">{{datos.estadocivil}}</small></a>
+                            </div>
+                        </div>
+
+                        <div  class="containe2">
+                            <div class="dato">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="13" fill="#204672"
+                                    class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                </svg>
+                                <a class="text" style="font-size: 85%;">Pais: <small class="" style="color: #92a7bf;">{{datos.pais}}
+                                        ({{datos.cuidad}})</small></a>
+                            </div>
+
+                            <div class="dato">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="13" fill="#204672"
+                                    class="bi bi-journal-code" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M8.646 5.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646 6.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 8l1.647-1.646a.5.5 0 0 0 0-.708z" />
+                                    <path
+                                        d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                                    <path
+                                        d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                                </svg>
+                                <a class="text"style="font-size: 85%;">Hora de contacto: <small class=""
+                                        style="color: #92a7bf;">{{datos.horadecontacto}}</small></a>
+                            </div>
+                        </div>
+
+                        <div  class="containe2">
+                            <div class="dato">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="13" fill="#204672"
+                                    class="bi bi-telephone" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                                </svg>
+                                <a class="text" style="font-size: 85%;">Telefono: <small class=""
+                                        style="color: #92a7bf;">{{datos.telefono}}</small></a>
+                            </div>
+
+                            <div class="dato">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="13" fill="#204672"
+                                    class="bi bi-calendar-day" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.684 11.523v-2.3h2.261v-.61H4.684V6.801h2.464v-.61H4v5.332h.684zm3.296 0h.676V8.98c0-.554.227-1.007.953-1.007.125 0 .258.004.329.015v-.613a1.806 1.806 0 0 0-.254-.02c-.582 0-.891.32-1.012.567h-.02v-.504H7.98v4.105zm2.805-5.093c0 .238.192.425.43.425a.428.428 0 1 0 0-.855.426.426 0 0 0-.43.43zm.094 5.093h.672V7.418h-.672v4.105z" />
+                                    <path
+                                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                </svg>
+                                <a class="text" style="font-size: 85%;">Fecha de Nacimiento: <small class=""
+                                        style="color: #92a7bf;">{{datos.fechanacimiento | date:
+                                        "mediumDate"}}</small></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>                    
+                        <a class="text"><small class="" style="color: #92a7bf;">Mis habilidades:</small></a></div>
+
+                    <div class="datos">
+
+                        <div *ngFor="let datos_conocimiento of datos_conocimientos">
+                            <button type="button" class="btn btn-outline-primary btn-sm">{{
+                                datos_conocimiento.conocimientosescritos | uppercase}}</button>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="text"><small class="" style="color: #92a7bf;">idiomas:</small></a>
+                    </div>
+                    
+                    <div class="datos">
+
+                        <div *ngFor="let datos_idiom of datos_idioma">
+                            <button type="button" class="btn btn-outline-primary btn-sm">{{ datos_idiom.idiomas |
+                                uppercase}}</button>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="card-text"><small class="text-muted">Perfil de trabajor de informe</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

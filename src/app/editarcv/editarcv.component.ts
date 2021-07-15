@@ -16,11 +16,8 @@ export class EditarcvComponent implements OnInit {
   form: any = FormGroup;
   load: boolean = true;
   modal: boolean = true;
-  Funciones: boolean = false;
-  Experiencias: boolean = false;
-  Formacion: boolean = false;
+  id_user;
 
-  Conocimientos: boolean = false;
   datos_user;
   datos;
 
@@ -60,23 +57,6 @@ export class EditarcvComponent implements OnInit {
       pais: ['', Validators.required],
       ciudad: ['', Validators.required],
       direccion: ['', Validators.required],
-      
-      //cargo: ['', Validators.required],
-      
-      //empresa: ['', Validators.required],
-      //funcion: ['', Validators.required],
-      //area: ['', Validators.required],
-      //logros: ['', Validators.required],
-
-      //centro: ['', Validators.required],
-      //nivelestudio: ['', Validators.required],
-      //especialidad: ['', Validators.required],
-      //estado: ['', Validators.required],
-
-      //conocimientos: ['', Validators.required],
-      //conocimientosescritos: ['', Validators.required],
-
-      //hojavida: ['', Validators.required],
 
     });
   }
@@ -84,6 +64,10 @@ export class EditarcvComponent implements OnInit {
   async onSubmit() {
 
     if (this.form.valid) {
+
+      this.id_user = localStorage.getItem("id_user")
+
+      console.log("id:", this.id_user)
 
       let data = {
         nombre: this.form.value.nombre,
@@ -99,30 +83,15 @@ export class EditarcvComponent implements OnInit {
         pais: this.form.value.pais,
         ciudad: this.form.value.ciudad,
         direccion: this.form.value.direccion,
-        //cargo: this.form.value.cargo,
-        //empresa: this.form.value.empresa,
-        //funcion: this.form.value.funcion,
-        //area: this.form.value.area,
-        //logros: this.form.value.logros,
-        //idiomas: this.form.value.idiomas,
-        //nivel: this.form.value.nivel,
-        //centro: this.form.value.centro,
-        //nivelestudio: this.form.value.nivelestudio,
-        //especialidad: this.form.value.especialidad,
-        //estado: this.form.value.estado,
-        //conocimientos: this.form.value.conocimientos,
-        //conocimientosescritos: this.form.value.conocimientosescritos,
-        //hojavida: this.form.value.hojavida,
+        id: this.id_user
+
       }
 
+
       this.load = false;
-      this.client.postRequest('http://localhost:5000/api/v01/user/editarvc', data).subscribe(
+      this.client.postRequest('http://localhost:5000/api/v01/user/editarvc', data, localStorage.getItem('token')).subscribe(
 
         (response: any) => {
-
-          this.route.navigate( ['/perfil_usuario'])
-
-          this.load = true;
 
           const Toast = Swal.mixin({
             toast: true,
@@ -139,14 +108,35 @@ export class EditarcvComponent implements OnInit {
           Toast.fire({
             icon: 'success',
             title: 'Datos guardados'
-          })//.then(() => {
-          //  this.route.navigate( ['/perfil_usuario'])
-          //}) 
+          }).then(() => {
+            this.route.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+            this.route.navigate(['/editar_cv']));
+          })
 
           console.log(response);
           
       },
       (error) => {
+
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'center',
+          showConfirmButton: false,
+          timer: 1500,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+        
+        Toast.fire({
+          icon: 'warning',
+          title: 'Error al guardar'
+        }).then(() => {
+          this.route.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+          this.route.navigate(['/editar_cv']));
+        })
 
         console.log(error.status); 
 

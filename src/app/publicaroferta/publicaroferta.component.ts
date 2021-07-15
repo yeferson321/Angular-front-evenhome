@@ -16,6 +16,8 @@ export class PublicarofertaComponent implements OnInit {
   
   form: any = FormGroup;
   load: boolean = true;
+  id_user;
+  nombre;
 
   constructor(private fb: FormBuilder,
     private route: Router,
@@ -25,7 +27,7 @@ export class PublicarofertaComponent implements OnInit {
   ngOnInit(): void {
 
     this.form = this.fb.group({
-      trabajo: ['', Validators.required],
+      vacantes: ['', Validators.required],
       profesiones: ['', Validators.required],
       experiencia: ['', Validators.required],
       herramientas: ['', Validators.required],
@@ -35,6 +37,8 @@ export class PublicarofertaComponent implements OnInit {
       salario: ['', Validators.required],
       descripcion: ['', Validators.required],
     });
+
+    
 
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function () {
@@ -64,8 +68,11 @@ export class PublicarofertaComponent implements OnInit {
 
     if (this.form.valid) {
 
+      this.id_user = localStorage.getItem("id_user")
+      this.nombre = localStorage.getItem("courrentUser")
+
       let data = {
-        trabajo: this.form.value.trabajo,
+        vacantes: this.form.value.vacantes,
         profesiones: this.form.value.profesiones,
         experiencia: this.form.value.experiencia,
         herramientas: this.form.value.herramientas,
@@ -74,6 +81,8 @@ export class PublicarofertaComponent implements OnInit {
         empleo: this.form.value.empleo,
         salario: this.form.value.salario,
         descripcion: this.form.value.descripcion,
+        nombre: this.nombre,
+        id: this.id_user
       }
 
       this.load = false;
@@ -81,7 +90,27 @@ export class PublicarofertaComponent implements OnInit {
 
         (response: any) => {
 
-          this.route.navigate(['/destacar_oferta'])
+          this.load = true;
+
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'center',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Datos guardados'
+          }).then(() => {
+            this.route.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+              this.route.navigate(['/destacar_oferta']));
+          })
 
           console.log(response);
 
@@ -106,7 +135,7 @@ export class PublicarofertaComponent implements OnInit {
             icon: 'error',
             title: 'Puede que algunos de tus datos sean incorrectos'
           }).then(() => {
-            this.route.navigate( ['/perfil_empresa'])
+            this.route.navigate( ['/publicar_oferta'])
           }) 
 
           console.log(error.status);

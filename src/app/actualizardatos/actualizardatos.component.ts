@@ -15,6 +15,7 @@ export class ActualizardatosComponent implements OnInit {
 
   form: any = FormGroup;
   load: boolean = true;
+  id_user;
 
   constructor(private fb: FormBuilder,
     private route: Router,
@@ -67,6 +68,10 @@ export class ActualizardatosComponent implements OnInit {
 
     if (this.form.valid) {
 
+      this.id_user = localStorage.getItem("id_user")
+
+      console.log("id:", this.id_user)
+
       let data = {
         nombre: this.form.value.nombre,
         apellidos: this.form.value.apellidos,
@@ -82,10 +87,11 @@ export class ActualizardatosComponent implements OnInit {
         pais: this.form.value.pais,
         ciudad: this.form.value.ciudad,
         direccion: this.form.value.direccion,
+        id: this.id_user
       }
 
       this.load = false;
-      this.client.postRequest('http://localhost:5000/api/v01/user/actualizar', data).subscribe(
+      this.client.postRequest('http://localhost:5000/api/v01/user/actualizar', data, localStorage.getItem('token')).subscribe(
 
         (response: any) => {
 

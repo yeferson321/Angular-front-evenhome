@@ -1,7 +1,7 @@
 p {
     margin-top: 0;
-    margin-bottom: 1rem;
     color: #7a7d85;
+    margin-bottom: 0%;
 }
 
 a {
@@ -16,3 +16,48 @@ a {
     color: #54565a;
 }
 
+.card-header {
+    padding: 45px 20%;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .card-header {
+        padding: 5px 0%;
+    }
+}
+
+.text-center{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .text-center{
+        margin-top: 100px;
+        margin: revert;
+        margin-top: 10%;
+    }
+}
+
+.text-center>blockquote{
+    font-size:large
+}
+
+.blockquote>p{
+    color: rgb(20, 157, 220);;
+    font-style: italic;
+}
+
+.text-center>blockquote{
+    font-size:large
+}
+
+.ico{
+    margin-bottom: 15px;
+}
+
+.blockquote-footer{
+    margin: 0 auto;
+    width: 100%;
+    color:rgb(20, 157, 220);;
+}

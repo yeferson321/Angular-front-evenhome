@@ -100,6 +100,8 @@ export class IniciousuarioComponent implements OnInit {
 
           this.auth.setCourrentCorreo(response.correo)
 
+          this.auth.setCourrentidUser(response.id_user)
+
           localStorage.setItem('token', response.token)
           console.log(localStorage.getItem('token'));
 
@@ -121,6 +123,9 @@ export class IniciousuarioComponent implements OnInit {
           Toast.fire({
             icon: 'warning',
             title: 'Puede que su correo o contraseña sean incorrectos'
+          }).then(() => {
+            this.route.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+            this.route.navigate(['/inicio_usuario']));
           })
 
           console.log(error.status);

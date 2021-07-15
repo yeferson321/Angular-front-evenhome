@@ -1,7 +1,7 @@
 p {
     margin-top: 0;
-    margin-bottom: 1rem;
     color: #7a7d85;
+    margin-bottom: 0%;
 }
 
 a {
@@ -14,4 +14,46 @@ a {
 .title {
     font-size: 115%;
     color: #54565a;
+}
+
+.card-header {
+    padding: 4.5rem 34%;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .card-header {
+        padding: 0.5rem 0%;
+    }
+}
+
+.text-center{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 768px), screen and (orientation: portrait){
+    .text-center{
+        margin-top: 100px;
+        margin: revert;
+        margin-top: 10%;
+    }
+}
+
+.blockquote>p{
+    color: #DBFCFF;
+    font-style: italic;
+}
+
+.text-center>blockquote{
+    font-size:large
+}
+
+.ico{
+    margin-bottom: 15px;
+}
+
+.blockquote-footer{
+    margin: 0 auto;
+    width: 100%;
+    color: #DBFCFF;
 }

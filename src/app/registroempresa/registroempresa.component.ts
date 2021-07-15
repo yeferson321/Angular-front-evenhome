@@ -119,12 +119,15 @@ export class RegistroempresaComponent implements OnInit {
 
           this.auth.login(response.token)
 
-          this.auth.setCourrentUser(response.nombre)
+          this.auth.setCourrentUserempresa(response.nombre)
 
-          this.auth.setCourrentApellidos(response.apellidos)
+          this.auth.setCourrentCorreoempresa(response.correo)
+
+          this.auth.setCourrentidempresa(response.id_user)
 
           localStorage.setItem('token', response.token)
           console.log(localStorage.getItem('token'));
+
 
         },
         (error) => {
@@ -144,6 +147,9 @@ export class RegistroempresaComponent implements OnInit {
           Toast.fire({
             icon: 'warning',
             title: 'El correo ya existe'
+          }).then(() => {
+            this.route.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+            this.route.navigate(['/registro_empresa']));
           })
 
         })

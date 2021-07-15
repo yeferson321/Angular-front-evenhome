@@ -9,7 +9,6 @@ import { PerfilusuarioComponent } from './perfilusuario/perfilusuario.component'
 import { ActualizardatosComponent } from './actualizardatos/actualizardatos.component';
 import { EditarcvComponent } from './editarcv/editarcv.component';
 import { VisualizacvComponent } from './visualizacv/visualizacv.component';
-import { EditaridiomaComponent } from './editaridioma/editaridioma.component';
 import { EmpleoComponent } from './empleo/empleo.component';
 import { EmpresasComponent } from './empresas/empresas.component';
 
@@ -21,6 +20,7 @@ import { PublicarofertaComponent } from './publicaroferta/publicaroferta.compone
 import { DestacarofertaComponent } from './destacaroferta/destacaroferta.component';
 import { PlanesempresaComponent } from './planesempresa/planesempresa.component';
 import { EditarcvempresaComponent } from './editarcvempresa/editarcvempresa.component';
+import { VcusuarioComponent } from './vcusuario/vcusuario.component';
 
 
 const routes: Routes = [
@@ -33,7 +33,6 @@ const routes: Routes = [
   { path: 'actualizar_datos', component:ActualizardatosComponent},
   { path: 'editar_cv', component:EditarcvComponent},
   { path: 'visualizar_cv', component:VisualizacvComponent},
-  { path: 'editar_idioma/:id', component:EditaridiomaComponent},
 
   { path: 'empresa', component:EmpresasComponent},
   { path: 'empleo', component:EmpleoComponent},
@@ -46,8 +45,7 @@ const routes: Routes = [
   { path: 'destacar_oferta', component:DestacarofertaComponent},
   { path: 'planes_empresa', component:PlanesempresaComponent},
   { path: 'editar_cv_empresa', component:EditarcvempresaComponent},
-  
-
+  { path: 'vc_online_usuario', component:VcusuarioComponent},
 
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];

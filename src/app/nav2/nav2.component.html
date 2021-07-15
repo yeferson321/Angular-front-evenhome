@@ -17,15 +17,15 @@
                         class="btn btn-primary btn-sm">Busca Trabajados Remotos</button>
                 </div>
 
-                <li class="nav-item" *ngIf="auth.isLoggedIn() | async">
-                    <a class="nav-link" [routerLink]="['/editar_cv']">Mejora tu perfil</a>
+                <li class="nav-item" >
+                    <a class="nav-link" *ngIf="auth.isLoggedIn() | async" [routerLink]="['/editar_cv']">Mejora tu perfil</a>
                 </li>
 
                 <li class="nav-item" >
                     <a class="nav-link" href="" [routerLink]="['/educacion']">Formacion</a>
                 </li>
 
-                <li *ngIf="!(auth.isLoggedIn() | async)" class="nav-item">
+                <li  class="nav-item">
                     <a class="nav-link" href="" [routerLink]="['/empleo']">Empleo</a>
                 </li>
 
@@ -49,7 +49,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#" [routerLink]="['/']" (click)="auth.logout()" (click)="auth.logoutAdmin()">Salir</a>
+                        <li><a class="dropdown-item" href="#" [routerLink]="['/']" (click)="auth.logout()">Salir</a>
                         </li>
                     </ul>
                 </li>

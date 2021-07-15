@@ -1,0 +1,88 @@
+.card {
+    top: 100px;
+    margin: auto;
+    border-top: 3px solid #0d6efd;
+}
+
+.avatar{
+    text-align: -webkit-center;
+}
+
+.img-fluid {
+    max-width: 50%;
+    margin: 17px;
+}
+
+.img{
+    display: inline-flex;
+    align-items: flex-end;
+}
+
+.bi{
+    margin-right: 7px;
+}
+
+#car{
+    font-size: 13px;
+}
+
+.text-muted {
+    color: #00ffbb!important;
+}
+
+.button{
+    text-align: -webkit-center;
+}
+
+.col-md-4 {
+    flex: 0 0 auto;
+    width: 33.3333333333%;
+    padding: 15px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.cargo{
+    margin-bottom: 12px;
+}
+
+.text{
+    font-size: 17px;
+    margin-right: 10px;
+}
+
+.btn-group-sm>.btn, .btn-sm {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    border-radius: 1.2rem;
+}
+
+.btn-outline-primary {
+    color: #4d95ff;
+    border-color: #c5c5c5;
+    font-weight: 600;
+}
+
+.btn-outline-primary:hover{
+    color: #ffffff;
+    border-color: #c5c5c5;
+}
+
+.datos{
+    display: flex;
+}
+
+.btn-sm{
+    margin: 5px;
+}
+
+.container_datos{
+    display: inline;
+}
+
+.containe2{
+    display: flex;
+    margin-bottom: 2%;
+}

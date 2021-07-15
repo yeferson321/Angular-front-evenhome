@@ -23,13 +23,9 @@ import { RegistroempresaComponent } from './registroempresa/registroempresa.comp
 import { EmpresasComponent } from './empresas/empresas.component';
 import { EmpleoComponent } from './empleo/empleo.component';
 import { EditarcvidiomaComponent } from './editarcvidioma/editarcvidioma.component';
-import { EditaridiomaComponent } from './editaridioma/editaridioma.component';
 import { ActualizardatosempresaComponent } from './actualizardatosempresa/actualizardatosempresa.component';
 import { PerfilempresaComponent } from './perfilempresa/perfilempresa.component';
 import { EditarimgComponent } from './editarimg/editarimg.component';
-import { EditarrolesComponent } from './editarroles/editarroles.component';
-import { EditarexperienciasComponent } from './editarexperiencias/editarexperiencias.component';
-import { EditarformacionComponent } from './editarformacion/editarformacion.component';
 import { EditarhabilidadesComponent } from './editarhabilidades/editarhabilidades.component';
 import { FooterComponent } from './footer/footer.component';
 import { PublicarofertaComponent } from './publicaroferta/publicaroferta.component';
@@ -37,6 +33,8 @@ import { DestacarofertaComponent } from './destacaroferta/destacaroferta.compone
 import { PlanesempresaComponent } from './planesempresa/planesempresa.component';
 import { Footer2Component } from './footer2/footer2.component';
 import { EditarcvempresaComponent } from './editarcvempresa/editarcvempresa.component';
+import { Navempresa1Component } from './navempresa1/navempresa1.component';
+import { VcusuarioComponent } from './vcusuario/vcusuario.component';
 
 
 @NgModule({
@@ -60,13 +58,9 @@ import { EditarcvempresaComponent } from './editarcvempresa/editarcvempresa.comp
     EmpresasComponent,
     EmpleoComponent,
     EditarcvidiomaComponent,
-    EditaridiomaComponent,
     ActualizardatosempresaComponent,
     PerfilempresaComponent,
     EditarimgComponent,
-    EditarrolesComponent,
-    EditarexperienciasComponent,
-    EditarformacionComponent,
     EditarhabilidadesComponent,
     FooterComponent,
     PublicarofertaComponent,
@@ -74,6 +68,8 @@ import { EditarcvempresaComponent } from './editarcvempresa/editarcvempresa.comp
     PlanesempresaComponent,
     Footer2Component,
     EditarcvempresaComponent,
+    Navempresa1Component,
+    VcusuarioComponent,
   ],
   imports: [
     BrowserModule,

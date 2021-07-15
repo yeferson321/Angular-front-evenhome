@@ -2,161 +2,171 @@
 
 <div class="fondo">
 
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngFor="let datos of datos_user">
+    <div id="caja">
 
-        <div class="container_h2">
-            <h2>
-                Datos personales
-            </h2>
-        </div>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngFor="let datos of datos_user">
 
-        <div class="row">
-
-            <div class="col">
-                <label id="titu">Nombre</label>
-                <input formControlName="nombre" type="text" class="form-control" placeholder="{{datos[0]}}"
-                    aria-label="Nombre">
+            <div class="container_h2">
+                <h2>
+                    Datos personales
+                </h2>
             </div>
 
-            <div class="col">
-                <label id="titu">Apellidos</label>
-                <input formControlName="apellidos" type="text" class="form-control" placeholder="{{datos[1]}}"
-                    aria-label="Apellidos">
+            <div class="row">
+
+                <div class="col">
+                    <label id="titu">Nombre</label>
+                    <input formControlName="nombre" type="text" class="form-control" placeholder="{{datos[0]}}"
+                        aria-label="Nombre">
+                </div>
+
+                <div class="col">
+                    <label id="titu">Apellidos</label>
+                    <input formControlName="apellidos" type="text" class="form-control" placeholder="{{datos[1]}}"
+                        aria-label="Apellidos">
+                </div>
+
+                <div class="col">
+                    <label id="titu">Género *</label>
+                    <select formControlName="genero" class="form-select" aria-label="Default select example">
+                        <option value="" selected="selected">{{datos[2]}}</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
             </div>
 
-            <div class="col">
-                <label id="titu">Género *</label>
-                <select formControlName="genero" class="form-select" aria-label="Default select example">
-                    <option value="" selected="selected">{{datos[2]}}</option>
-                    <option value="masculino">Masculino</option>
-                    <option value="femenino">Femenino</option>
-                    <option value="otro">Otro</option>
-                </select>
+            <div class="row">
+
+                <div class="col">
+                    <label id="titu">Tipo de identificación *</label>
+                    <select formControlName="tipoidentificacion" class="form-select"
+                        aria-label="Default select example">
+                        <option value="" selected="selected">{{datos[4]}}</option>
+                        <option value="cedula de ciudadania">Cédula de ciudadanía</option>
+                        <option value="cedula de extranjeria">Cédula de extranjería</option>
+                        <option value="tarjeta de identidad">Tarjeta de identidad</option>
+                        <option value="pasaporte">Pasaporte</option>
+                        <option value="numero de identificacion">Número de Identificación</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="col">
+                    <label id="titu">Identificacion</label>
+                    <input formControlName="identificacion" type="text" class="form-control" placeholder="{{datos[5]}}"
+                        aria-label="Numero de identificación">
+                </div>
+
             </div>
 
-        </div>
+            <div class="row">
 
-        <div class="row">
+                <div class="col">
+                    <label id="titu">Fecha Nacimiento</label>
+                    <input formControlName="fechanacimiento" type="date" class="form-control"
+                        aria-label="Fecha Nacimiento">
+                </div>
 
-            <div class="col">
-                <label id="titu">Tipo de identificación *</label>
-                <select formControlName="tipoidentificacion" class="form-select" aria-label="Default select example">
-                    <option value="" selected="selected">{{datos[4]}}</option>
-                    <option value="cedula de ciudadania">Cédula de ciudadanía</option>
-                    <option value="cedula de extranjeria">Cédula de extranjería</option>
-                    <option value="tarjeta de identidad">Tarjeta de identidad</option>
-                    <option value="pasaporte">Pasaporte</option>
-                    <option value="numero de identificacion">Número de Identificación</option>
-                    <option value="otro">Otro</option>
-                </select>
+                <div class="col">
+                    <label id="titu">Estado civil *</label>
+                    <select formControlName="estadocivil" formControlName="estadocivil" class="form-select"
+                        aria-label="Default select example">
+                        <option value="" selected="selected">{{datos[7]}}</option>
+                        <option value="soltero(a)">Soltero(a)</option>
+                        <option value="casado(a)">Casado(a)</option>
+                        <option value="separado(a)">Separado(a)</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
             </div>
 
-            <div class="col">
-                <label id="titu">Identificacion</label>
-                <input formControlName="identificacion" type="text" class="form-control" placeholder="{{datos[5]}}"
-                    aria-label="Numero de identificación">
+            <div class="row">
+
+                <div class="col">
+                    <label id="titu">Telefono contacto</label>
+                    <input formControlName="telefono" type="tel" class="form-control" placeholder="{{datos[8]}}"
+                        aria-label="Telefono contacto">
+                </div>
+
+                <div class="col">
+                    <label id="titu">Otro teléfono</label>
+                    <input formControlName="otrotelefono" type="tel" class="form-control" placeholder="{{datos[9]}}"
+                        aria-label="Otro teléfono de contacto">
+                </div>
+
+                <div class="col">
+                    <label id="titu">Hora de contacto *</label>
+                    <select formControlName="horadecontacto" formControlName="horadecontacto" class="form-select"
+                        aria-label="Default select example">
+                        <option value="" selected="selected">{{datos[10]}}</option>
+                        <option value="todo el dia">Todo el dia</option>
+                        <option value="mañana">Mañana</option>
+                        <option value="medio dia">Medio dia</option>
+                        <option value="tarde">Tarde</option>
+                        <option value="noche">Noche</option>
+                    </select>
+                </div>
+
             </div>
 
-        </div>
+            <div class="row">
 
-        <div class="row">
+                <div class="col">
+                    <label id="titu">Pais *</label>
+                    <select formControlName="pais" class="form-select" aria-label="Default select example">
+                        <option value="" selected="selected">{{datos[11]}}</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="bolivia">Bolivia</option>
+                        <option value="brasil">Brasil</option>
+                        <option value="chile">Chile</option>
+                        <option value="colombia">Colombia</option>
+                        <option value="costa Rica">Costa Rica</option>
+                        <option value="cuba">Cuba</option>
+                        <option value="ecuador">Ecuador</option>
+                        <option value="el salvador">El Salvador</option>
+                        <option value="guatemala">Guatemala</option>
+                        <option value="haiti">Haití</option>
+                        <option value="honduras">Honduras</option>
+                        <option value="mexico">México</option>
+                        <option value="nicaragua">Nicaragua</option>
+                        <option value="panama">Panamá</option>
+                        <option value="paraguay">Paraguay</option>
+                        <option value="peru">Perú</option>
+                        <option value="republica dominicana">República Dominicana</option>
+                        <option value="uruguay">Uruguay</option>
+                        <option value="venezuela">Venezuela</option>
+                    </select>
+                </div>
 
-            <div class="col">
-                <label id="titu">Fecha Nacimiento</label>
-                <input formControlName="fechanacimiento" type="date" class="form-control" aria-label="Fecha Nacimiento">
+                <div class="col">
+                    <label id="titu">Ciudad</label>
+                    <input formControlName="ciudad" type="text" class="form-control" placeholder="{{datos[12]}}"
+                        aria-label="Ciudad en la que vive">
+                </div>
+
+                <div class="col">
+                    <label id="titu">Direccion</label>
+                    <input formControlName="direccion" type="text" class="form-control" placeholder="{{datos[13]}}"
+                        aria-label="Dirección de su residencia">
+                </div>
+
             </div>
 
-            <div class="col">
-                <label id="titu">Estado civil *</label>
-                <select formControlName="estadocivil" formControlName="estadocivil" class="form-select"
-                    aria-label="Default select example">
-                    <option value="" selected="selected">{{datos[7]}}</option>
-                    <option value="soltero(a)">Soltero(a)</option>
-                    <option value="casado(a)">Casado(a)</option>
-                    <option value="separado(a)">Separado(a)</option>
-                    <option value="otro">Otro</option>
-                </select>
+            <div class="d-grid gap-2" id="butt">
+                <button type="submit" class="btn btn-primary">Actualizar datos</button>
             </div>
+        </form>
 
-        </div>
-
-        <div class="row">
-
-            <div class="col">
-                <label id="titu">Telefono contacto</label>
-                <input formControlName="telefono" type="tel" class="form-control" placeholder="{{datos[8]}}"
-                    aria-label="Telefono contacto">
-            </div>
-
-            <div class="col">
-                <label id="titu">Otro teléfono</label>
-                <input formControlName="otrotelefono" type="tel" class="form-control" placeholder="{{datos[9]}}"
-                    aria-label="Otro teléfono de contacto">
-            </div>
-
-            <div class="col">
-                <label id="titu">Hora de contacto *</label>
-                <select formControlName="horadecontacto" formControlName="horadecontacto" class="form-select"
-                    aria-label="Default select example">
-                    <option value="" selected="selected">{{datos[10]}}</option>
-                    <option value="todo el dia">Todo el dia</option>
-                    <option value="mañana">Mañana</option>
-                    <option value="medio dia">Medio dia</option>
-                    <option value="tarde">Tarde</option>
-                    <option value="noche">Noche</option>
-                </select>
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="col">
-                <label id="titu">Pais *</label>
-                <select formControlName="pais" class="form-select" aria-label="Default select example">
-                    <option value="" selected="selected">{{datos[11]}}</option>
-                    <option value="argentina">Argentina</option>
-                    <option value="bolivia">Bolivia</option>
-                    <option value="brasil">Brasil</option>
-                    <option value="chile">Chile</option>
-                    <option value="colombia">Colombia</option>
-                    <option value="costa Rica">Costa Rica</option>
-                    <option value="cuba">Cuba</option>
-                    <option value="ecuador">Ecuador</option>
-                    <option value="el salvador">El Salvador</option>
-                    <option value="guatemala">Guatemala</option>
-                    <option value="haiti">Haití</option>
-                    <option value="honduras">Honduras</option>
-                    <option value="mexico">México</option>
-                    <option value="nicaragua">Nicaragua</option>
-                    <option value="panama">Panamá</option>
-                    <option value="paraguay">Paraguay</option>
-                    <option value="peru">Perú</option>
-                    <option value="republica dominicana">República Dominicana</option>
-                    <option value="uruguay">Uruguay</option>
-                    <option value="venezuela">Venezuela</option>
-                </select>
-            </div>
-
-            <div class="col">
-                <label id="titu">Ciudad</label>
-                <input formControlName="ciudad" type="text" class="form-control" placeholder="{{datos[12]}}"
-                    aria-label="Ciudad en la que vive">
-            </div>
-
-            <div class="col">
-                <label id="titu">Direccion</label>
-                <input formControlName="direccion" type="text" class="form-control" placeholder="{{datos[13]}}"
-                    aria-label="Dirección de su residencia">
-            </div>
-
-        </div>
-
-        <div class="d-grid gap-2" id="butt">
-            <button type="submit" class="btn btn-primary">Actualizar datos</button>
-        </div>
-    </form>
+    </div>
 
     <app-editarcvidioma></app-editarcvidioma>
+
+    <app-editarhabilidades></app-editarhabilidades>
+
+    <app-editarimg></app-editarimg>
 
 </div>

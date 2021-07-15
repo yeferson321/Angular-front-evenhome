@@ -68,11 +68,13 @@ export class InicioempresaComponent implements OnInit {
 
           console.log(response);
 
-          this.auth.loginAdmin(response.token)
- 
+          this.auth.login(response.token)
+
           this.auth.setCourrentUser(response.nombre)
 
           this.auth.setCourrentCorreoempresa(response.correo)
+
+          this.auth.setCourrentidempresa(response.id_user)
 
           localStorage.setItem('token', response.token)
           console.log(localStorage.getItem('token'));
@@ -95,6 +97,9 @@ export class InicioempresaComponent implements OnInit {
         Toast.fire({
           icon: 'warning',
           title: 'Puede que su correo o contraseña sean incorrectos'
+        }).then(() => {
+          this.route.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+          this.route.navigate(['/inicio_empresa']));
         })
 
         console.log(error.status);

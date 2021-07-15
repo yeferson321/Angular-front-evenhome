@@ -104,6 +104,10 @@ export class RegistrousuarioComponent implements OnInit {
 
           this.auth.setCourrentApellidos(response.apellidos)
 
+          this.auth.setCourrentCorreo(response.correo)
+
+          this.auth.setCourrentidUser(response.id_user)
+
           localStorage.setItem('token', response.token)
           console.log(localStorage.getItem('token'));
 
@@ -125,6 +129,9 @@ export class RegistrousuarioComponent implements OnInit {
           Toast.fire({
             icon: 'warning',
             title: 'El correo ya existe'
+          }).then(() => {
+            this.route.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+            this.route.navigate(['/registro_usuario']));
           })
 
         })

@@ -64,6 +64,12 @@
     }
 }
 
+.btn-primary {
+    color: #fff;
+    background-color: #4a73e8;
+    border-color: #4a73e8;
+}
+
 .btn-google{
     display: flex;
     align-items: center;
@@ -112,7 +118,7 @@
 
 .form-control{
     border-radius: 15px;
-    border: 1px solid deepskyblue;
+    border: 1px solid #4a73e8;
 }
 
 #butt>.btn-primary {
@@ -125,8 +131,8 @@
 
 #butt>.btn-primary:hover{
     color: #fff;
-    background-color: deepskyblue;
-    border-color:deepskyblue;
+    background-color: #4a73e8;
+    border-color:#4a73e8;
     border-radius: 15px;
     margin-top: 15px;
 }

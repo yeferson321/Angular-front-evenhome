@@ -15,9 +15,9 @@ export class EditarcvempresaComponent implements OnInit {
 
   form: any = FormGroup;
   load: boolean = true;
-
   datos_user;
   datos;
+  id_user;
 
   constructor(private fb: FormBuilder,
     private route: Router,
@@ -57,15 +57,11 @@ export class EditarcvempresaComponent implements OnInit {
       descripcion: ['', Validators.required],
     });
 
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function () {
       'use strict'
 
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
       var forms = document.querySelectorAll('.needs-validation')
 
-
-      // Loop over them and prevent submission
       Array.prototype.slice.call(forms)
         .forEach(function (form) {
           form.addEventListener('submit', function (event) {
@@ -85,6 +81,10 @@ export class EditarcvempresaComponent implements OnInit {
 
     if (this.form.valid) {
 
+      this.id_user = localStorage.getItem("id_user")
+
+      console.log("id:", this.id_user)
+
       let data = {
         nombre: this.form.value.nombre,
         apellidos: this.form.value.apellidos,
@@ -99,14 +99,14 @@ export class EditarcvempresaComponent implements OnInit {
         telefonoempresa: this.form.value.telefonoempresa,
         actividad: this.form.value.actividad,
         descripcion: this.form.value.descripcion,
+        id: this.id_user
+
       }
 
       this.load = false;
-      this.client.postRequest('http://localhost:5000/api/v01/actualizar/datos/empresa', data).subscribe(
+      this.client.postRequest('http://localhost:5000/api/v01/actualizar/datos/empresa', data, localStorage.getItem('token')).subscribe(
 
         (response: any) => {
-
-          this.route.navigate( ['/perfil_usuario'])
 
           this.load = true;
 
@@ -125,14 +125,35 @@ export class EditarcvempresaComponent implements OnInit {
           Toast.fire({
             icon: 'success',
             title: 'Datos guardados'
-          })//.then(() => {
-          //  this.route.navigate( ['/perfil_usuario'])
-          //}) 
+          }).then(() => {
+            this.route.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+            this.route.navigate(['/editar_cv_empresa']));
+          }) 
 
           console.log(response);
           
       },
       (error) => {
+
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'center',
+          showConfirmButton: false,
+          timer: 1500,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+        
+        Toast.fire({
+          icon: 'warning',
+          title: 'Error al guardar'
+        }).then(() => {
+          this.route.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+          this.route.navigate(['/editar_cv_empresa']));
+        })
 
         console.log(error.status); 
 

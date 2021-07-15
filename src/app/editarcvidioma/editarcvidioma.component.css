@@ -1,12 +1,3 @@
-.fondo{
-    margin-top: 15px;
-    text-align: center;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-}
-
 .col {
     flex: 1 0 0%;
     margin: 10px;
@@ -27,9 +18,22 @@
 
 .btn{
     border-radius: 15px;
-    margin: 16px;
+    margin: auto;
 }
 
 .tabla{
     width: 100%;
+}
+
+#caja{
+    margin-bottom: 8%;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #4a73e8;
+    border-color: #4a73e8;
+    margin-bottom: 16px;
+    margin-top: 20px;
 }
